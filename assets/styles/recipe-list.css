@@ -79,6 +79,10 @@
 }
 
 /* Column widths */
+.recipe-table th {
+    white-space: nowrap;
+}
+
 .icon-cell {
     width: 36px;
 }

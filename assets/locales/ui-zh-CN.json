@@ -1,0 +1,1587 @@
+{
+  "locale": "zh-CN",
+  "translations": [
+    {
+      "key": "index.html|title|GTNH Calculator",
+      "source": "GTNH Calculator",
+      "target": "GTNH 计算器"
+    },
+    {
+      "key": "index.html|menu.header|Greg Tech: New Horizons Calculator",
+      "source": "Greg Tech: New Horizons Calculator",
+      "target": "GregTech: New Horizons 计算器"
+    },
+    {
+      "key": "index.html|menu.version|For GTNH version 2.8.0",
+      "source": "For GTNH version 2.8.0",
+      "target": "适用于 GTNH 2.8.4 版本"
+    },
+    {
+      "key": "index.html|menu.links.github|Github",
+      "source": "Github",
+      "target": "GitHub"
+    },
+    {
+      "key": "index.html|menu.links.wiki|Wiki",
+      "source": "Wiki",
+      "target": "Wiki"
+    },
+    {
+      "key": "index.html|menu.links.spreadsheet|Spreadsheet",
+      "source": "Spreadsheet",
+      "target": "数据表"
+    },
+    {
+      "key": "index.html|menu.pages.title|Pages",
+      "source": "Pages",
+      "target": "页面"
+    },
+    {
+      "key": "index.html|menu.pages.loadFile|Load from file",
+      "source": "Load from file",
+      "target": "从文件加载"
+    },
+    {
+      "key": "index.html|menu.pages.storageHint|Pages are stored in your browser's local storage. This may not be reliable. Please save important pages as files or URLs.",
+      "source": "Pages are stored in your browser's local storage. This may not be reliable. Please save important pages as files or URLs.",
+      "target": "页面保存在浏览器本地存储中，可靠性有限。重要页面请保存为文件或链接。"
+    },
+    {
+      "key": "index.html|menu.newPage.title|New Page",
+      "source": "New Page",
+      "target": "新建页面"
+    },
+    {
+      "key": "index.html|menu.newPage.placeholder|Page name",
+      "source": "Page name",
+      "target": "页面名称"
+    },
+    {
+      "key": "index.html|menu.newPage.create|Create",
+      "source": "Create",
+      "target": "创建"
+    },
+    {
+      "key": "index.html|recipe.products.title|Products:",
+      "source": "Products:",
+      "target": "产物："
+    },
+    {
+      "key": "index.html|recipe.products.hint|(You can use negative amounts for input goal)",
+      "source": "(You can use negative amounts for input goal)",
+      "target": "（若要表示输入目标，可使用负数）"
+    },
+    {
+      "key": "index.html|recipe.recipes.title|Recipes:",
+      "source": "Recipes:",
+      "target": "配方："
+    },
+    {
+      "key": "index.html|recipe.search.placeholder|Search...",
+      "source": "Search...",
+      "target": "搜索..."
+    },
+    {
+      "key": "index.html|nei.search.label|Search:",
+      "source": "Search:",
+      "target": "搜索："
+    },
+    {
+      "key": "index.html|nei.search.placeholder|Start typing for search",
+      "source": "Start typing for search",
+      "target": "输入关键字开始搜索"
+    },
+    {
+      "key": "index.html|confirm.yes|Yes",
+      "source": "Yes",
+      "target": "是"
+    },
+    {
+      "key": "index.html|confirm.no|No",
+      "source": "No",
+      "target": "否"
+    },
+    {
+      "key": "index.html|confirm.cancel|Cancel",
+      "source": "Cancel",
+      "target": "取消"
+    },
+    {
+      "key": "index.html|loading.title|LOADING...",
+      "source": "LOADING...",
+      "target": "加载中..."
+    },
+    {
+      "key": "index.html|loading.body|First time loading may take a while.",
+      "source": "First time loading may take a while.",
+      "target": "首次加载可能需要一些时间。"
+    },
+    {
+      "key": "index.html|loading.download|(Downloading 30MB of data)",
+      "source": "(Downloading 30MB of data)",
+      "target": "（正在下载 30MB 数据）"
+    },
+    {
+      "key": "index.html|legal.icons|All icons and related materials featured on this website are the property of their respective copyright holders.",
+      "source": "All icons and related materials featured on this website are the property of their respective copyright holders.",
+      "target": "本网站展示的所有图标及相关素材，其所有权均归各自版权方所有。"
+    },
+    {
+      "key": "index.html|legal.usage|This site does not claim ownership of these materials. They are used here for informational and illustrative purposes only.",
+      "source": "This site does not claim ownership of these materials. They are used here for informational and illustrative purposes only.",
+      "target": "本网站不主张对这些素材的所有权，仅用于信息展示与示意说明。"
+    },
+    {
+      "key": "index.html|legal.trademark|All trademarks and copyrights belong to their respective owners.",
+      "source": "All trademarks and copyrights belong to their respective owners.",
+      "target": "所有商标与版权均归其各自权利人所有。"
+    },
+    {
+      "key": "index.html|legal.font|Font used: ",
+      "source": "Font used: ",
+      "target": "字体声明：中文界面回退字体 MiSans / Noto Sans CJK SC / Microsoft YaHei；使用字体："
+    },
+    {
+      "key": "src/dialogues.ts|ast:function:showConfirmDialog#1|Yes",
+      "source": "Yes",
+      "target": "是"
+    },
+    {
+      "key": "src/dialogues.ts|ast:function:showConfirmDialog#1|No",
+      "source": "No",
+      "target": "否"
+    },
+    {
+      "key": "src/index.ts|ast:global#1|An error occurred on loading:<br>",
+      "source": "An error occurred on loading:<br>",
+      "target": "加载时发生错误：<br>"
+    },
+    {
+      "key": "src/recipeList.ts|ast:var:linkAlgorithmNames/prop:[LinkAlgorithm.Ignore]#1|Ignore",
+      "source": "Ignore",
+      "target": "忽略"
+    },
+    {
+      "key": "src/recipeList.ts|crafter.dropdown.select|Select crafter:",
+      "source": "Select crafter:",
+      "target": "选择加工机器："
+    },
+    {
+      "key": "src/recipeList.ts|ast:class:RecipeList/method:setupActionHandlers/function:<anonymous>/var:populateDropdown/function:populateDropdown/function:<anonymous>/var:displayName#1|Singleblock ",
+      "source": "Singleblock ",
+      "target": "单方块 "
+    },
+    {
+      "key": "src/recipeList.ts|crafter.fixedCount.toggle|Set fixed crafter count",
+      "source": "Set fixed crafter count",
+      "target": "设置固定机器数量"
+    },
+    {
+      "key": "src/recipeList.ts|crafter.fixedCount.label|Crafter count:",
+      "source": "Crafter count:",
+      "target": "机器数量："
+    },
+    {
+      "key": "src/recipeList.ts|crafter.fixedCount.hint|When using a fixed crafter count, you should remove the product from the desired product list and let it be calculated automatically. Otherwise, the model will likely become infeasible.",
+      "source": "When using a fixed crafter count, you should remove the product from the desired product list and let it be calculated automatically. Otherwise, the model will likely become infeasible.",
+      "target": "使用固定机器数量时，应将该产物从目标产物列表中移除并让系统自动计算，否则模型很可能变为不可行。"
+    },
+    {
+      "key": "src/recipeList.ts|missingRecipe.title|Missing recipe",
+      "source": "Missing recipe",
+      "target": "配方缺失"
+    },
+    {
+      "key": "src/recipeList.ts|missingRecipe.body|This recipe was deleted or changed. Replace or remove it. (Or load a different version of this app)",
+      "source": "This recipe was deleted or changed. Replace or remove it. (Or load a different version of this app)",
+      "target": "该配方已被删除或变更。请替换或移除它。（或加载此应用的其他版本）"
+    },
+    {
+      "key": "src/recipeList.ts|shortInfo.parallels|parallels",
+      "source": "parallels",
+      "target": "并行"
+    },
+    {
+      "key": "src/recipeList.ts|changedRecipe.title|This recipe was changed!",
+      "source": "This recipe was changed!",
+      "target": "该配方已变更！"
+    },
+    {
+      "key": "src/recipeList.ts|changedRecipe.accept|Accept",
+      "source": "Accept",
+      "target": "接受"
+    },
+    {
+      "key": "src/recipeList.ts|group.placeholder|Group name",
+      "source": "Group name",
+      "target": "分组名称"
+    },
+    {
+      "key": "src/recipeList.ts|ast:class:RecipeList/method:renderExpandedGroup#1|POWER",
+      "source": "POWER",
+      "target": "功率"
+    },
+    {
+      "key": "src/recipeList.ts|ast:class:RecipeList/method:renderRootGroup#1|POWER",
+      "source": "POWER",
+      "target": "功率"
+    },
+    {
+      "key": "src/recipeList.ts|ast:class:RecipeList/method:renderExpandedGroup#1|INPUTS",
+      "source": "INPUTS",
+      "target": "输入"
+    },
+    {
+      "key": "src/recipeList.ts|ast:class:RecipeList/method:renderRootGroup#1|INPUTS",
+      "source": "INPUTS",
+      "target": "输入"
+    },
+    {
+      "key": "src/recipeList.ts|ast:class:RecipeList/method:renderExpandedGroup#1|OUTPUTS",
+      "source": "OUTPUTS",
+      "target": "输出"
+    },
+    {
+      "key": "src/recipeList.ts|ast:class:RecipeList/method:renderRootGroup#1|OUTPUTS",
+      "source": "OUTPUTS",
+      "target": "输出"
+    },
+    {
+      "key": "src/recipeList.ts|group.total|Group total:",
+      "source": "Group total:",
+      "target": "分组合计："
+    },
+    {
+      "key": "src/recipeList.ts|settings.title|Settings:",
+      "source": "Settings:",
+      "target": "设置："
+    },
+    {
+      "key": "src/recipeList.ts|settings.minVoltage|Voltage tier for new recipes:",
+      "source": "Voltage tier for new recipes:",
+      "target": "新配方默认电压等级："
+    },
+    {
+      "key": "src/recipeList.ts|settings.timeUnit|Time unit:",
+      "source": "Time unit:",
+      "target": "时间单位："
+    },
+    {
+      "key": "src/recipeList.ts|settings.timeUnit.hour|Hours",
+      "source": "Hours",
+      "target": "小时"
+    },
+    {
+      "key": "src/recipeList.ts|settings.timeUnit.min|Minutes",
+      "source": "Minutes",
+      "target": "分钟"
+    },
+    {
+      "key": "src/recipeList.ts|settings.timeUnit.sec|Seconds",
+      "source": "Seconds",
+      "target": "秒"
+    },
+    {
+      "key": "src/recipeList.ts|settings.timeUnit.tick|Ticks",
+      "source": "Ticks",
+      "target": "游戏刻"
+    },
+    {
+      "key": "src/recipeList.ts|settings.share|Share:",
+      "source": "Share:",
+      "target": "分享："
+    },
+    {
+      "key": "src/recipeList.ts|settings.copyLink|Copy shareable link to clipboard",
+      "source": "Copy shareable link to clipboard",
+      "target": "复制可分享链接到剪贴板"
+    },
+    {
+      "key": "src/recipeList.ts|settings.download|Download",
+      "source": "Download",
+      "target": "下载"
+    },
+    {
+      "key": "src/recipeList.ts|group.grandTotal|Grand total:",
+      "source": "Grand total:",
+      "target": "总计："
+    },
+    {
+      "key": "src/recipeList.ts|links.label|Links: (?)",
+      "source": "Links: (?)",
+      "target": "链接：(?)"
+    },
+    {
+      "key": "src/recipeList.ts|buttons.addRecipe|Add Recipe",
+      "source": "Add Recipe",
+      "target": "添加配方"
+    },
+    {
+      "key": "src/recipeList.ts|buttons.addGroup|Add Group",
+      "source": "Add Group",
+      "target": "添加分组"
+    },
+    {
+      "key": "src/recipeList.ts|buttons.hint|You can also add recipes by clicking on an item.",
+      "source": "You can also add recipes by clicking on an item.",
+      "target": "你也可以通过点击物品来添加配方。"
+    },
+    {
+      "key": "src/recipeList.ts|ast:class:RecipeList/method:renderStatus#1|Infeasible - There is no solution - You probably need to ignore some links",
+      "source": "Infeasible - There is no solution - You probably need to ignore some links",
+      "target": "不可行 - 当前无解 - 你可能需要忽略部分链接"
+    },
+    {
+      "key": "src/recipeList.ts|ast:class:RecipeList/method:renderStatus#1|Unbounded - Some items can be produced infinitely",
+      "source": "Unbounded - Some items can be produced infinitely",
+      "target": "无界 - 部分物品可无限生产"
+    },
+    {
+      "key": "src/recipeList.ts|status.solvedSuffix|is solved",
+      "source": "is solved",
+      "target": "已求解"
+    },
+    {
+      "key": "src/recipeList.ts|ast:class:RecipeList/method:renderProductList/function:<anonymous>#1|Unknown product: ",
+      "source": "Unknown product: ",
+      "target": "未知产物："
+    },
+    {
+      "key": "src/itemIcon.ts|tooltip.addRecipe|Left/Right click to add recipe",
+      "source": "Left/Right click to add recipe",
+      "target": "左键/右键点击以添加配方"
+    },
+    {
+      "key": "src/itemIcon.ts|tooltip.viewItemFlow|Left/Right click to view Production/Consumption for this item",
+      "source": "Left/Right click to view Production/Consumption for this item",
+      "target": "左键/右键点击以查看该物品的产出/消耗"
+    },
+    {
+      "key": "src/itemIcon.ts|tooltip.select|Click to select",
+      "source": "Click to select",
+      "target": "点击以选择"
+    },
+    {
+      "key": "src/itemIcon.ts|tooltip.toggleLinkIgnore|Click to toggle link ignore",
+      "source": "Click to toggle link ignore",
+      "target": "点击以切换链接忽略"
+    },
+    {
+      "key": "src/itemIcon.ts|tooltip.crafterClick|Click to select another crafter",
+      "source": "Click to select another crafter",
+      "target": "点击以选择其他机器"
+    },
+    {
+      "key": "src/recipeList.ts|product.add|Add Product",
+      "source": "Add Product",
+      "target": "添加产物"
+    },
+    {
+      "key": "src/menu.ts|ast:function:ValidateAndNotify/var:message#1|The page you are about to load contains:",
+      "source": "The page you are about to load contains:",
+      "target": "你即将加载的页面包含："
+    },
+    {
+      "key": "src/menu.ts|validate.missingCountSuffix|missing recipe(s)",
+      "source": "missing recipe(s)",
+      "target": "个缺失配方"
+    },
+    {
+      "key": "src/menu.ts|validate.missingBody|A missing recipe is a recipe that was deleted or substantially changed. These recipes will be displayed as missing and must be deleted or replaced.",
+      "source": "A missing recipe is a recipe that was deleted or substantially changed. These recipes will be displayed as missing and must be deleted or replaced.",
+      "target": "缺失配方指已被删除或发生较大变更的配方。这些配方会显示为缺失，必须删除或替换。"
+    },
+    {
+      "key": "src/menu.ts|validate.changedCountSuffix|changed recipe(s)",
+      "source": "changed recipe(s)",
+      "target": "个变更配方"
+    },
+    {
+      "key": "src/menu.ts|validate.changedBody|A changed recipe is a recipe that was changed a bit and might break, but uses and produces the same items as before. These recipes were replaced with the best matching recipes.",
+      "source": "A changed recipe is a recipe that was changed a bit and might break, but uses and produces the same items as before. These recipes were replaced with the best matching recipes.",
+      "target": "变更配方指配方发生小幅变化，可能导致计算异常，但输入输出物品与之前一致。系统已将其替换为最匹配的配方。"
+    },
+    {
+      "key": "src/menu.ts|ast:function:ValidateAndNotify#1|This is likely caused by the game version change.",
+      "source": "This is likely caused by the game version change.",
+      "target": "这通常是由游戏版本变化导致的。"
+    },
+    {
+      "key": "src/menu.ts|ast:function:ValidateAndNotify#1|OK",
+      "source": "OK",
+      "target": "确定"
+    },
+    {
+      "key": "src/menu.ts|ast:class:PageManager/method:setupEventListeners/function:<anonymous>#1|New",
+      "source": "New",
+      "target": "新建"
+    },
+    {
+      "key": "src/menu.ts|title.suffix|GTNH calculator",
+      "source": "GTNH calculator",
+      "target": "GTNH 计算器"
+    },
+    {
+      "key": "src/menu.ts|import.conflictPrefix|A page named",
+      "source": "A page named",
+      "target": "页面“"
+    },
+    {
+      "key": "src/menu.ts|import.conflictSuffix|already exists. What would you like to do?",
+      "source": "already exists. What would you like to do?",
+      "target": "”已存在。你希望如何处理？"
+    },
+    {
+      "key": "src/menu.ts|ast:class:PageManager/method:importPage#1|Create New",
+      "source": "Create New",
+      "target": "新建一份"
+    },
+    {
+      "key": "src/menu.ts|ast:class:PageManager/method:importPage#1|Replace Existing",
+      "source": "Replace Existing",
+      "target": "替换现有"
+    },
+    {
+      "key": "src/menu.ts|ast:class:PageManager/method:importPage#1|Cancel",
+      "source": "Cancel",
+      "target": "取消"
+    },
+    {
+      "key": "src/menu.ts|ast:class:PageManager/method:setupFileLoadHandler/function:<anonymous>/function:input.onchange#1|Failed to load file:",
+      "source": "Failed to load file:",
+      "target": "加载文件失败："
+    },
+    {
+      "key": "src/menu.ts|delete.confirmPrefix|You are deleting page",
+      "source": "You are deleting page",
+      "target": "你正在删除页面"
+    },
+    {
+      "key": "src/menu.ts|delete.confirmSuffix|This action cannot be undone. Are you sure you want to continue?",
+      "source": "This action cannot be undone. Are you sure you want to continue?",
+      "target": "此操作不可撤销。确定要继续吗？"
+    },
+    {
+      "key": "src/menu.ts|delete.buttonPrefix|Delete",
+      "source": "Delete",
+      "target": "删除"
+    },
+    {
+      "key": "src/menu.ts|ast:class:PageManager/method:deletePage#1|Cancel",
+      "source": "Cancel",
+      "target": "取消"
+    },
+    {
+      "key": "src/nei.ts|ast:class:NeiRecipeTypeInfo/method:FormatCircuitConflicts#1|No recipe conflicts",
+      "source": "No recipe conflicts",
+      "target": "无配方冲突"
+    },
+    {
+      "key": "src/nei.ts|conflicts.singlePrefix|Recipe conflicts on circuit #",
+      "source": "Recipe conflicts on circuit #",
+      "target": "在电路 # 上存在配方冲突"
+    },
+    {
+      "key": "src/nei.ts|conflicts.multiPrefix|Recipe conflicts on circuits #",
+      "source": "Recipe conflicts on circuits #",
+      "target": "在电路 # 上存在配方冲突："
+    },
+    {
+      "key": "src/nei.ts|ast:var:FuelTypeNames#1|Diesel",
+      "source": "Diesel",
+      "target": "柴油"
+    },
+    {
+      "key": "src/nei.ts|ast:var:FuelTypeNames#1|Gas",
+      "source": "Gas",
+      "target": "气体"
+    },
+    {
+      "key": "src/nei.ts|ast:var:FuelTypeNames#1|Hot",
+      "source": "Hot",
+      "target": "高温"
+    },
+    {
+      "key": "src/nei.ts|ast:var:FuelTypeNames#1|Dense Steam",
+      "source": "Dense Steam",
+      "target": "浓缩蒸汽"
+    },
+    {
+      "key": "src/nei.ts|ast:var:FuelTypeNames#1|Plasma",
+      "source": "Plasma",
+      "target": "等离子体"
+    },
+    {
+      "key": "src/nei.ts|ast:var:FuelTypeNames#1|Magic",
+      "source": "Magic",
+      "target": "魔力"
+    },
+    {
+      "key": "src/nei.ts|ast:function:DisplayHeatRequired#1|Heat: ",
+      "source": "Heat: ",
+      "target": "热量："
+    },
+    {
+      "key": "src/nei.ts|heat.volc|Volc",
+      "source": "Volc",
+      "target": "火山炉"
+    },
+    {
+      "key": "src/nei.ts|heat.ebf|EBF",
+      "source": "EBF",
+      "target": "高炉"
+    },
+    {
+      "key": "src/nei.ts|ast:function:DisplayFusionTier#1|To start: ",
+      "source": "To start: ",
+      "target": "启动需求："
+    },
+    {
+      "key": "src/nei.ts|ast:function:DisplayNkeRange#1|Kinetic energy: ",
+      "source": "Kinetic energy: ",
+      "target": "动能："
+    },
+    {
+      "key": "src/nei.ts|ast:function:MetadataToString#1|Requires low gravity",
+      "source": "Requires low gravity",
+      "target": "需要低重力环境"
+    },
+    {
+      "key": "src/nei.ts|ast:function:MetadataToString#1|Requires cleanroom",
+      "source": "Requires cleanroom",
+      "target": "需要洁净室"
+    },
+    {
+      "key": "src/nei.ts|metadata.fuelType|Fuel type: ",
+      "source": "Fuel type: ",
+      "target": "燃料类型："
+    },
+    {
+      "key": "src/nei.ts|metadata.fuelValue|Fuel value: ",
+      "source": "Fuel value: ",
+      "target": "燃料数值："
+    },
+    {
+      "key": "src/nei.ts|ast:function:MetadataToString#1|Multi-step plasma",
+      "source": "Multi-step plasma",
+      "target": "多步等离子"
+    },
+    {
+      "key": "src/nei.ts|ast:function:MetadataToString#1|Single-step plasma",
+      "source": "Single-step plasma",
+      "target": "单步等离子"
+    },
+    {
+      "key": "src/nei.ts|metadata.plasmaTier|Plasma tier: ",
+      "source": "Plasma tier: ",
+      "target": "等离子等级："
+    },
+    {
+      "key": "src/nei.ts|metadata.requiresTier|Requires tier ",
+      "source": "Requires tier ",
+      "target": "需要等级 "
+    },
+    {
+      "key": "src/nei.ts|ast:function:MetadataToString#1|Glass tier: ",
+      "source": "Glass tier: ",
+      "target": "玻璃等级："
+    },
+    {
+      "key": "src/nei.ts|ast:function:MetadataToString#1|QFT focus tier: ",
+      "source": "QFT focus tier: ",
+      "target": "QFT 聚焦等级："
+    },
+    {
+      "key": "src/nei.ts|ast:function:MetadataToString#1|Recycle recipe",
+      "source": "Recycle recipe",
+      "target": "回收配方"
+    },
+    {
+      "key": "src/nei.ts|ast:var:tabs/prop:name#1|All Items",
+      "source": "All Items",
+      "target": "全部物品"
+    },
+    {
+      "key": "src/nei.ts|ast:var:tabs/prop:name#1|All Recipes",
+      "source": "All Recipes",
+      "target": "全部配方"
+    },
+    {
+      "key": "src/machines.ts|ast:class:StandardOverclocker/method:calculate/prop:overclockName#1|Can't overclock",
+      "source": "Can't overclock",
+      "target": "无法超频"
+    },
+    {
+      "key": "src/machines.ts|ast:class:StandardOverclocker/method:calculate/var:suffix#1| (capped)",
+      "source": " (capped)",
+      "target": "（封顶）"
+    },
+    {
+      "key": "src/machines.ts|ast:class:StandardOverclocker/method:calculate#1|Perfect OC x",
+      "source": "Perfect OC x",
+      "target": "完美超频 x"
+    },
+    {
+      "key": "src/machines.ts|ast:class:StandardOverclocker/method:calculate#1| OC x",
+      "source": " OC x",
+      "target": " 超频 x"
+    },
+    {
+      "key": "src/machines.ts|ast:class:NullOverclocker/method:calculate/prop:overclockName#1|Can't overclock",
+      "source": "Can't overclock",
+      "target": "无法超频"
+    },
+    {
+      "key": "src/machines.ts|ast:var:CoilTierChoice/prop:description#1|Coils",
+      "source": "Coils",
+      "target": "线圈"
+    },
+    {
+      "key": "src/machines.ts|ast:var:notImplementedMachine/prop:info#1|Machine not implemented (Calculated as a singleblock)",
+      "source": "Machine not implemented (Calculated as a singleblock)",
+      "target": "机器尚未实现（按单方块机器估算）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.bronzemachine.macerator/prop:info#1|Steam machine: Steam consumption not calculated",
+      "source": "Steam machine: Steam consumption not calculated",
+      "target": "蒸汽机器：未计算蒸汽消耗"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.hpmachine.macerator/prop:info#1|High pressure steam machine: Steam consumption not calculated",
+      "source": "High pressure steam machine: Steam consumption not calculated",
+      "target": "高压蒸汽机器：未计算蒸汽消耗"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.gtpp.multimachine.steam.mixer/prop:info#1|Steam multiblock machine: Steam consumption not calculated",
+      "source": "Steam multiblock machine: Steam consumption not calculated",
+      "target": "蒸汽多方块机器：未计算蒸汽消耗"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.gtpp.multimachine.steam.mixer/prop:choices/prop:pressure/prop:description#1|Pressure",
+      "source": "Pressure",
+      "target": "压力"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.gtpp.multimachine.steam.mixer/prop:choices/prop:pressure/prop:choices#1|Normal",
+      "source": "Normal",
+      "target": "普通"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.gtpp.multimachine.steam.mixer/prop:choices/prop:pressure/prop:choices#1|High",
+      "source": "High",
+      "target": "高压"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.hipcompressor/prop:info#1|Assumes it is not overheated",
+      "source": "Assumes it is not overheated",
+      "target": "假设其未过热"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.blackholecompressor/prop:info#1|Parallels depend on stability, which is not represented.",
+      "source": "Parallels depend on stability, which is not represented.",
+      "target": "并行数取决于稳定性，当前模型未表示该参数。"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.bw.biovat/prop:info#1|Assumes perfect fill rate (x1001)",
+      "source": "Assumes perfect fill rate (x1001)",
+      "target": "假设填充率完美（x1001）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.componentassemblyline/prop:choices/prop:componentTier/prop:description#1|Components Tier",
+      "source": "Components Tier",
+      "target": "部件等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.frf/prop:choices/prop:coils/prop:description#1|Coils",
+      "source": "Coils",
+      "target": "线圈"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.frf/prop:choices/prop:coils/prop:choices#1|T1 Field Restriction Coil",
+      "source": "T1 Field Restriction Coil",
+      "target": "T1 约束场线圈"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.frf/prop:choices/prop:coils/prop:choices#1|T2 Advanced Field Restriction Coil",
+      "source": "T2 Advanced Field Restriction Coil",
+      "target": "T2 高级约束场线圈"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.frf/prop:choices/prop:coils/prop:choices#1|T3 Ultimate Field Restriction Coil",
+      "source": "T3 Ultimate Field Restriction Coil",
+      "target": "T3 终极约束场线圈"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.frf/prop:choices/prop:coils/prop:choices#1|T4 Temporal Field Restriction Coil",
+      "source": "T4 Temporal Field Restriction Coil",
+      "target": "T4 时间约束场线圈"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.neutronactivator/prop:choices/prop:speedingPipeCasing/prop:description#1|Speeding Pipe Casing",
+      "source": "Speeding Pipe Casing",
+      "target": "加速管道机械方块"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.neutronactivator/prop:info/function:info#1|INFO: Power usage not calculated</br>",
+      "source": "INFO: Power usage not calculated</br>",
+      "target": "提示：未计算耗电量</br>"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.preciseassembler/prop:choices/prop:precisionTier/prop:description#1|Precision Tier",
+      "source": "Precision Tier",
+      "target": "精密等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.preciseassembler/prop:choices/prop:precisionTier/prop:choices#1|Imprecise (MK-0)",
+      "source": "Imprecise (MK-0)",
+      "target": "不精确（MK-0）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.preciseassembler/prop:choices/prop:precisionTier/prop:choices#1|MK-I",
+      "source": "MK-I",
+      "target": "MK-I"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.preciseassembler/prop:choices/prop:precisionTier/prop:choices#1|MK-II",
+      "source": "MK-II",
+      "target": "MK-II"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.preciseassembler/prop:choices/prop:precisionTier/prop:choices#1|MK-III",
+      "source": "MK-III",
+      "target": "MK-III"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.preciseassembler/prop:choices/prop:precisionTier/prop:choices#1|MK-IV",
+      "source": "MK-IV",
+      "target": "MK-IV"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.solidifier/prop:choices/prop:widthExpansion/prop:description#1|Width Expansion",
+      "source": "Width Expansion",
+      "target": "宽度扩展"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.solidifier/prop:info#1|Assuming running at max speed.",
+      "source": "Assuming running at max speed.",
+      "target": "假设以最高速度运行。"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.industrialarcfurnace.controller.tier.single/prop:choices/prop:w/prop:description#1|W",
+      "source": "W",
+      "target": "W"
+    },
+    {
+      "key": "src/machines.ts|ast:var:PipeItemCasingTierChoice/prop:description#1|Item Pipe Casing Tier",
+      "source": "Item Pipe Casing Tier",
+      "target": "物品管道机械方块等级"
+    },
+    {
+      "key": "src/machines.ts|ast:var:PipeItemCasingTierChoice/prop:choices#1|T1: Tin",
+      "source": "T1: Tin",
+      "target": "T1：锡"
+    },
+    {
+      "key": "src/machines.ts|ast:var:PipeItemCasingTierChoice/prop:choices#1|T2: Brass",
+      "source": "T2: Brass",
+      "target": "T2：黄铜"
+    },
+    {
+      "key": "src/machines.ts|ast:var:PipeItemCasingTierChoice/prop:choices#1|T3: Electrum",
+      "source": "T3: Electrum",
+      "target": "T3：琥珀金"
+    },
+    {
+      "key": "src/machines.ts|ast:var:PipeItemCasingTierChoice/prop:choices#1|T4: Platinum",
+      "source": "T4: Platinum",
+      "target": "T4：铂"
+    },
+    {
+      "key": "src/machines.ts|ast:var:PipeItemCasingTierChoice/prop:choices#1|T5: Osmium",
+      "source": "T5: Osmium",
+      "target": "T5：锇"
+    },
+    {
+      "key": "src/machines.ts|ast:var:PipeItemCasingTierChoice/prop:choices#1|T6: Quantium",
+      "source": "T6: Quantium",
+      "target": "T6：夸塔"
+    },
+    {
+      "key": "src/machines.ts|ast:var:PipeItemCasingTierChoice/prop:choices#1|T7: Fluxed Electrum",
+      "source": "T7: Fluxed Electrum",
+      "target": "T7：助熔琥珀金"
+    },
+    {
+      "key": "src/machines.ts|ast:var:PipeItemCasingTierChoice/prop:choices#1|T8: Black Plutonium",
+      "source": "T8: Black Plutonium",
+      "target": "T8：黑钚"
+    },
+    {
+      "key": "src/machines.ts|ast:var:PipeFluidCasingTierChoice/prop:description#1|Fluid Pipe Casing Tier",
+      "source": "Fluid Pipe Casing Tier",
+      "target": "流体管道机械方块等级"
+    },
+    {
+      "key": "src/machines.ts|ast:var:PipeFluidCasingTierChoice/prop:choices#1|T1: Bronze",
+      "source": "T1: Bronze",
+      "target": "T1：青铜"
+    },
+    {
+      "key": "src/machines.ts|ast:var:PipeFluidCasingTierChoice/prop:choices#1|T2: Steel",
+      "source": "T2: Steel",
+      "target": "T2：钢"
+    },
+    {
+      "key": "src/machines.ts|ast:var:PipeFluidCasingTierChoice/prop:choices#1|T3: Titanium",
+      "source": "T3: Titanium",
+      "target": "T3：钛"
+    },
+    {
+      "key": "src/machines.ts|ast:var:PipeFluidCasingTierChoice/prop:choices#1|T4: Tungstensteel",
+      "source": "T4: Tungstensteel",
+      "target": "T4：钨钢"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.blastfurnace/prop:choices/prop:muffler/prop:description#1|Muffler hatch",
+      "source": "Muffler hatch",
+      "target": "消声仓"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.blastfurnace/prop:choices/prop:muffler/prop:choices#1|LV (0%)",
+      "source": "LV (0%)",
+      "target": "LV（0%）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.blastfurnace/prop:choices/prop:muffler/prop:choices#1|MV (12.5%)",
+      "source": "MV (12.5%)",
+      "target": "MV（12.5%）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.blastfurnace/prop:choices/prop:muffler/prop:choices#1|HV (25%)",
+      "source": "HV (25%)",
+      "target": "HV（25%）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.blastfurnace/prop:choices/prop:muffler/prop:choices#1|EV (37.5%)",
+      "source": "EV (37.5%)",
+      "target": "EV（37.5%）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.blastfurnace/prop:choices/prop:muffler/prop:choices#1|IV (50%)",
+      "source": "IV (50%)",
+      "target": "IV（50%）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.blastfurnace/prop:choices/prop:muffler/prop:choices#1|LuV (62.5%)",
+      "source": "LuV (62.5%)",
+      "target": "LuV（62.5%）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.blastfurnace/prop:choices/prop:muffler/prop:choices#1|ZPM (75%)",
+      "source": "ZPM (75%)",
+      "target": "ZPM（75%）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.blastfurnace/prop:choices/prop:muffler/prop:choices#1|UV (87.5%)",
+      "source": "UV (87.5%)",
+      "target": "UV（87.5%）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.blastfurnace/prop:choices/prop:muffler/prop:choices#1|UHV (100%)",
+      "source": "UHV (100%)",
+      "target": "UHV（100%）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.adv.blastfurnace/prop:info#1|Blazing pyrotheum required (Not calculated)",
+      "source": "Blazing pyrotheum required (Not calculated)",
+      "target": "需要炽焰烈焱（未计算）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.electricimplosioncompressor/prop:choices/prop:containmentBlockTier/prop:description#1|Containment Block Tier",
+      "source": "Containment Block Tier",
+      "target": "约束方块等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.electricimplosioncompressor/prop:choices/prop:containmentBlockTier/prop:choices#1|Neutronium",
+      "source": "Neutronium",
+      "target": "中子素"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.electricimplosioncompressor/prop:choices/prop:containmentBlockTier/prop:choices#1|Infinity",
+      "source": "Infinity",
+      "target": "无尽"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.electricimplosioncompressor/prop:choices/prop:containmentBlockTier/prop:choices#1|Transcendent Metal",
+      "source": "Transcendent Metal",
+      "target": "超时空金属"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.electricimplosioncompressor/prop:choices/prop:containmentBlockTier/prop:choices#1|SpaceTime",
+      "source": "SpaceTime",
+      "target": "时空"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.electricimplosioncompressor/prop:choices/prop:containmentBlockTier/prop:choices#1|Universum",
+      "source": "Universum",
+      "target": "寰宇"
+    },
+    {
+      "key": "src/machines.ts|ast:var:electroMagnets/prop:name#1|Iron Electromagnet",
+      "source": "Iron Electromagnet",
+      "target": "铁制电磁铁"
+    },
+    {
+      "key": "src/machines.ts|ast:var:electroMagnets/prop:name#1|Steel Electromagnet",
+      "source": "Steel Electromagnet",
+      "target": "钢制电磁铁"
+    },
+    {
+      "key": "src/machines.ts|ast:var:electroMagnets/prop:name#1|Neodymium Electromagnet",
+      "source": "Neodymium Electromagnet",
+      "target": "钕制电磁铁"
+    },
+    {
+      "key": "src/machines.ts|ast:var:electroMagnets/prop:name#1|Samarium Electromagnet",
+      "source": "Samarium Electromagnet",
+      "target": "钐制电磁铁"
+    },
+    {
+      "key": "src/machines.ts|ast:var:electroMagnets/prop:name#1|Tengam Electromagnet",
+      "source": "Tengam Electromagnet",
+      "target": "谐镃电磁铁"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.electromagneticseparator/prop:choices/prop:electromagnet/prop:description#1|Electromagnet",
+      "source": "Electromagnet",
+      "target": "电磁铁"
+    },
+    {
+      "key": "src/machines.ts|ast:function:laserOverclockCalculator#1|Laser OC x",
+      "source": "Laser OC x",
+      "target": "激光超频 x"
+    },
+    {
+      "key": "src/machines.ts|ast:function:laserOverclockCalculator#1|1 tick cap",
+      "source": "1 tick cap",
+      "target": "1 tick 封顶"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.ggfab.machine.adv_assline/prop:choices/prop:inputAmperage/prop:description#1|Input Amperage",
+      "source": "Input Amperage",
+      "target": "输入安培数"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.ggfab.machine.adv_assline/prop:info#1|NOTE: Voltage determines the energy hatch voltage, not maximum voltage.",
+      "source": "NOTE: Voltage determines the energy hatch voltage, not maximum voltage.",
+      "target": "注意：电压决定的是能源仓电压，而非最大电压。"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.fluidextractor/prop:choices/prop:solenoidTier/prop:description#1|Solenoid Tier",
+      "source": "Solenoid Tier",
+      "target": "螺线管等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.multifurnace/prop:info#1|Parallel amount needs testing!",
+      "source": "Parallel amount needs testing!",
+      "target": "并行数量仍需测试！"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.industrialhammer.controller.tier.single/prop:choices/prop:anvilTier/prop:description#1|Anvil Tier",
+      "source": "Anvil Tier",
+      "target": "铁砧等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.industrialhammer.controller.tier.single/prop:choices/prop:anvilTier/prop:choices#1|T1 - Vanilla",
+      "source": "T1 - Vanilla",
+      "target": "T1 - 原版"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.industrialhammer.controller.tier.single/prop:choices/prop:anvilTier/prop:choices#1|T2 - Steel",
+      "source": "T2 - Steel",
+      "target": "T2 - 钢"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.industrialhammer.controller.tier.single/prop:choices/prop:anvilTier/prop:choices#1|T3 - Dark Steel / Thaumium",
+      "source": "T3 - Dark Steel / Thaumium",
+      "target": "T3 - 暗钢 / 神秘"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.industrialhammer.controller.tier.single/prop:choices/prop:anvilTier/prop:choices#1|T4 - Void Metal",
+      "source": "T4 - Void Metal",
+      "target": "T4 - 虚空金属"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.engraver/prop:choices/prop:laserAmperage/prop:description#1|Laser Amperage",
+      "source": "Laser Amperage",
+      "target": "激光安培数"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.industrialmacerator.controller.tier.single/prop:choices/prop:upgradeChip/prop:description#1|Upgrade Chip",
+      "source": "Upgrade Chip",
+      "target": "升级芯片"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.industrialmacerator.controller.tier.single/prop:choices/prop:upgradeChip/prop:choices#1|No Upgrade",
+      "source": "No Upgrade",
+      "target": "无升级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.industrialmacerator.controller.tier.single/prop:choices/prop:upgradeChip/prop:choices#1|Maceration Upgrade Chip",
+      "source": "Maceration Upgrade Chip",
+      "target": "粉碎升级芯片"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.nanoforge/prop:choices/prop:tier/prop:description#1|Tier",
+      "source": "Tier",
+      "target": "等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.nanoforge/prop:choices/prop:tier/prop:choices#1|T1 (Carbon Nanite)",
+      "source": "T1 (Carbon Nanite)",
+      "target": "T1（碳纳米蜂群）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.nanoforge/prop:choices/prop:tier/prop:choices#1|T2 (Neutronium Nanite)",
+      "source": "T2 (Neutronium Nanite)",
+      "target": "T2（中子纳米蜂群）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.nanoforge/prop:choices/prop:tier/prop:choices#1|T3 (Transcendent Metal Nanite)",
+      "source": "T3 (Transcendent Metal Nanite)",
+      "target": "T3（超时空金属纳米蜂群）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.nanoforge/prop:choices/prop:tier/prop:choices#1|T4 (Eternity Nanite)",
+      "source": "T4 (Eternity Nanite)",
+      "target": "T4（永恒纳米蜂群）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.nanoforge/prop:choices/prop:parallels/prop:description#1|Parallels",
+      "source": "Parallels",
+      "target": "并行数"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.pcbfactory/prop:choices/prop:nanites/prop:description#1|Nanites",
+      "source": "Nanites",
+      "target": "纳米蜂群"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.pcbfactory/prop:choices/prop:traceSize/prop:description#1|Trace Size",
+      "source": "Trace Size",
+      "target": "线宽"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.pcbfactory/prop:choices/prop:biochamber/prop:description#1|Biochamber",
+      "source": "Biochamber",
+      "target": "生物仓"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.pcbfactory/prop:choices/prop:biochamber/prop:choices#1|No Biochamber",
+      "source": "No Biochamber",
+      "target": "无生物仓"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.pcbfactory/prop:choices/prop:biochamber/prop:choices#1|Biochamber",
+      "source": "Biochamber",
+      "target": "有生物仓"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.pcbfactory/prop:choices/prop:cooling/prop:description#1|Cooling",
+      "source": "Cooling",
+      "target": "冷却塔"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.pcbfactory/prop:choices/prop:cooling/prop:choices#1|No Cooling",
+      "source": "No Cooling",
+      "target": "无冷却塔"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.pcbfactory/prop:choices/prop:cooling/prop:choices#1|Liquid Cooling",
+      "source": "Liquid Cooling",
+      "target": "水冷塔"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.pcbfactory/prop:choices/prop:cooling/prop:choices#1|Thermosink Radiator",
+      "source": "Thermosink Radiator",
+      "target": "空冷塔"
+    },
+    {
+      "key": "src/machines.ts|ast:var:DtpfCatalysts#1|Crude",
+      "source": "Crude",
+      "target": "粗制"
+    },
+    {
+      "key": "src/machines.ts|ast:var:DtpfCatalysts#1|Prosaic",
+      "source": "Prosaic",
+      "target": "平凡"
+    },
+    {
+      "key": "src/machines.ts|ast:var:DtpfCatalysts#1|Resplendent",
+      "source": "Resplendent",
+      "target": "光辉"
+    },
+    {
+      "key": "src/machines.ts|ast:var:DtpfCatalysts#1|Exotic",
+      "source": "Exotic",
+      "target": "异星"
+    },
+    {
+      "key": "src/machines.ts|ast:var:DtpfCatalysts#1|Stellar",
+      "source": "Stellar",
+      "target": "恒星"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.plasmaforge/prop:choices/prop:convergence/prop:description#1|Convergence",
+      "source": "Convergence",
+      "target": "维度收敛"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.plasmaforge/prop:choices/prop:convergence/prop:choices#1|No Convergence",
+      "source": "No Convergence",
+      "target": "不收敛"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.plasmaforge/prop:choices/prop:convergence/prop:choices#1|Convergence",
+      "source": "Convergence",
+      "target": "收敛"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.plasmaforge/prop:choices/prop:discount/prop:description#1|Discount",
+      "source": "Discount",
+      "target": "减免"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.plasmaforge/prop:choices/prop:catalyst/prop:description#1|Catalyst",
+      "source": "Catalyst",
+      "target": "催化剂"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.megavacuumfreezer/prop:choices/prop:coolant/prop:description#1|Coolant",
+      "source": "Coolant",
+      "target": "冷却剂"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.megavacuumfreezer/prop:choices/prop:coolant/prop:choices#1|No Coolant",
+      "source": "No Coolant",
+      "target": "无冷却剂"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.megavacuumfreezer/prop:choices/prop:coolant/prop:choices#1|Molten SpaceTime",
+      "source": "Molten SpaceTime",
+      "target": "熔融时空"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.megavacuumfreezer/prop:choices/prop:coolant/prop:choices#1|Spatially Enlarged Fluid",
+      "source": "Spatially Enlarged Fluid",
+      "target": "空间扩展流体"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.megavacuumfreezer/prop:choices/prop:coolant/prop:choices#1|Molten Eternity",
+      "source": "Molten Eternity",
+      "target": "熔融永恒"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.megavacuumfreezer/prop:info#1|Coolant calculation not implemented.",
+      "source": "Coolant calculation not implemented.",
+      "target": "冷却剂计算尚未实现。"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.source_chamber/prop:info#1|Output energy scales with EU/t up to the point shown in the recipe.",
+      "source": "Output energy scales with EU/t up to the point shown in the recipe.",
+      "target": "输出能量会随 EU/t 提升，直到配方显示的上限。"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.industrialsalloyamelter.controller.tier.mega/prop:info#1|Assumes matching glass tier.",
+      "source": "Assumes matching glass tier.",
+      "target": "假设玻璃等级匹配。"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.industrialcokeoven.controller.tier.single/prop:choices/prop:casingType/prop:description#1|Casing Type",
+      "source": "Casing Type",
+      "target": "机械方块类型"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.industrialcokeoven.controller.tier.single/prop:choices/prop:casingType/prop:choices#1|Heat Resistant Casings",
+      "source": "Heat Resistant Casings",
+      "target": "耐热机械方块"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.industrialcokeoven.controller.tier.single/prop:choices/prop:casingType/prop:choices#1|Heat Proof Casings",
+      "source": "Heat Proof Casings",
+      "target": "隔热机械方块"
+    },
+    {
+      "key": "src/machines.ts|ast:prop:recipe/function:recipe/var:catalystNumber/function:<anonymous>#1|Catalyst",
+      "source": "Catalyst",
+      "target": "催化剂"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.adv.vacuumfurnace/prop:choices/prop:heatIncrements/prop:description#1|Heat Difference Tiers",
+      "source": "Heat Difference Tiers",
+      "target": "炉温超频次数"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.adv.vacuumfurnace/prop:info#1|Extracting heat difference from the recipe is not implemented.",
+      "source": "Extracting heat difference from the recipe is not implemented.",
+      "target": "尚未实现从配方中提取炉温超频次数。"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:shielding/prop:choices#1|Infinity",
+      "source": "Infinity",
+      "target": "无尽"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:shielding/prop:choices#1|SpaceTime",
+      "source": "SpaceTime",
+      "target": "时空"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:manipulator/prop:choices#1|Infinity",
+      "source": "Infinity",
+      "target": "无尽"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:manipulator/prop:choices#1|SpaceTime",
+      "source": "SpaceTime",
+      "target": "时空"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:catalysts/prop:description#1|Catalysts",
+      "source": "Catalysts",
+      "target": "催化剂数量"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:shielding/prop:description#1|Shielding",
+      "source": "Shielding",
+      "target": "护盾"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:manipulator/prop:description#1|Manipulator",
+      "source": "Manipulator",
+      "target": "操控器"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:focusedOutput/prop:description#1|Focused Output",
+      "source": "Focused Output",
+      "target": "定向产出"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:focusedAll/prop:description#1|Focus All",
+      "source": "Focus All",
+      "target": "全产物聚焦"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:focusedOutput/prop:choices#1|None",
+      "source": "None",
+      "target": "无"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:saw/prop:description#1|Saw",
+      "source": "Saw",
+      "target": "原木"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:saw/prop:choices#1|No saw",
+      "source": "No saw",
+      "target": "无"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:saw/prop:choices#1|Saw (x1)",
+      "source": "Saw (x1)",
+      "target": "锯（x1）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:saw/prop:choices#1|Buzzsaw (x2)",
+      "source": "Buzzsaw (x2)",
+      "target": "圆锯（x2）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:saw/prop:choices#1|Chainsaw (x4)",
+      "source": "Chainsaw (x4)",
+      "target": "链锯（x4）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:saplings/prop:description#1|Saplings",
+      "source": "Saplings",
+      "target": "树苗"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:saplings/prop:choices#1|No grafter",
+      "source": "No grafter",
+      "target": "无"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:saplings/prop:choices#1|Branch cutter (x1)",
+      "source": "Branch cutter (x1)",
+      "target": "剪枝器（GT）（x1）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:saplings/prop:choices#1|Grafter (x4)",
+      "source": "Grafter (x4)",
+      "target": "剪枝器（林业）（x4）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:leaves/prop:description#1|Leaves",
+      "source": "Leaves",
+      "target": "树叶"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:leaves/prop:choices#1|No shears",
+      "source": "No shears",
+      "target": "无"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:leaves/prop:choices#1|Shears (x1)",
+      "source": "Shears (x1)",
+      "target": "剪刀（x1）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:leaves/prop:choices#1|Wire Cutter (x2)",
+      "source": "Wire Cutter (x2)",
+      "target": "剪线钳（x2）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:leaves/prop:choices#1|Automatic Snips (x4)",
+      "source": "Automatic Snips (x4)",
+      "target": "自动剪线钳（x4）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:fruits/prop:description#1|Fruits",
+      "source": "Fruits",
+      "target": "水果"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:fruits/prop:choices#1|No knife",
+      "source": "No knife",
+      "target": "无"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:fruits/prop:choices#1|Knife (x1)",
+      "source": "Knife (x1)",
+      "target": "小刀（x1）"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.defusioncrafter/prop:choices/prop:casings/prop:description#1|Fusion casings",
+      "source": "Fusion casings",
+      "target": "聚合机械方块"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.defusioncrafter/prop:choices/prop:casings/prop:choices#1|Bloody Ichorium",
+      "source": "Bloody Ichorium",
+      "target": "血腥灵宝"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.defusioncrafter/prop:choices/prop:casings/prop:choices#1|Draconium",
+      "source": "Draconium",
+      "target": "龙锭"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.defusioncrafter/prop:choices/prop:casings/prop:choices#1|Wyvern",
+      "source": "Wyvern",
+      "target": "双足飞龙"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.defusioncrafter/prop:choices/prop:casings/prop:choices#1|Awakened Draconium",
+      "source": "Awakened Draconium",
+      "target": "觉醒龙"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.defusioncrafter/prop:choices/prop:casings/prop:choices#1|Chaotic",
+      "source": "Chaotic",
+      "target": "混沌"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:shielding/prop:choices#1|Neutron",
+      "source": "Neutron",
+      "target": "中子"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:shielding/prop:choices#1|Cosmic",
+      "source": "Cosmic",
+      "target": "寰宇"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.em.eye_of_harmony/prop:choices/prop:compression/prop:description#1|Compression",
+      "source": "Compression",
+      "target": "压缩时空场发生器"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.em.eye_of_harmony/prop:choices/prop:dilation/prop:description#1|Time Dilation",
+      "source": "Time Dilation",
+      "target": "时间膨胀场发生器"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.em.eye_of_harmony/prop:choices/prop:stabilisation/prop:description#1|Stabilisation",
+      "source": "Stabilisation",
+      "target": "稳定力场发生器"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.em.eye_of_harmony/prop:choices/prop:astralArrays/prop:description#1|Astral Arrays",
+      "source": "Astral Arrays",
+      "target": "星阵数量"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.em.eye_of_harmony/prop:choices/prop:overclocks/prop:description#1|Overclocks",
+      "source": "Overclocks",
+      "target": "超频次数"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.em.eye_of_harmony/prop:info#1|NOTE: Power input/output not calculated",
+      "source": "NOTE: Power input/output not calculated",
+      "target": "注意：未计算输入/输出功率"
+    },
+    {
+      "key": "src/machines.ts|ast:var:EyeOfHarmonyTierNames#1|1 - Crude",
+      "source": "1 - Crude",
+      "target": "1 - 粗制"
+    },
+    {
+      "key": "src/machines.ts|ast:var:EyeOfHarmonyTierNames#1|2 - Primitive",
+      "source": "2 - Primitive",
+      "target": "2 - 原始"
+    },
+    {
+      "key": "src/machines.ts|ast:var:EyeOfHarmonyTierNames#1|3 - Stable",
+      "source": "3 - Stable",
+      "target": "3 - 稳定"
+    },
+    {
+      "key": "src/machines.ts|ast:var:EyeOfHarmonyTierNames#1|4 - Advanced",
+      "source": "4 - Advanced",
+      "target": "4 - 先进"
+    },
+    {
+      "key": "src/machines.ts|ast:var:EyeOfHarmonyTierNames#1|5 - Superb",
+      "source": "5 - Superb",
+      "target": "5 - 卓越"
+    },
+    {
+      "key": "src/machines.ts|ast:var:EyeOfHarmonyTierNames#1|6 - Exotic",
+      "source": "6 - Exotic",
+      "target": "6 - 异星"
+    },
+    {
+      "key": "src/machines.ts|ast:var:EyeOfHarmonyTierNames#1|7 - Perfect",
+      "source": "7 - Perfect",
+      "target": "7 - 完美"
+    },
+    {
+      "key": "src/machines.ts|ast:var:EyeOfHarmonyTierNames#1|8 - Tipler",
+      "source": "8 - Tipler",
+      "target": "8 - 太初"
+    },
+    {
+      "key": "src/machines.ts|ast:var:EyeOfHarmonyTierNames#1|9 - Gallifreyan",
+      "source": "9 - Gallifreyan",
+      "target": "9 - 鸿蒙"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.neutronactivator/prop:info/function:info#1|INFO: Requires ",
+      "source": "INFO: Requires ",
+      "target": "提示：需要 "
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.neutronactivator/prop:info/function:info#1|MeV. Estimated ",
+      "source": "MeV. Estimated ",
+      "target": "MeV。预计 "
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.neutronactivator/prop:info/function:info#1| to reach, ",
+      "source": " to reach, ",
+      "target": " 达成，持续 "
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.neutronactivator/prop:info/function:info#1| in range.",
+      "source": " in range.",
+      "target": " 处于范围内。"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.projectmoduleassemblert1/prop:info#1|NOTE: overrides voltage tier",
+      "source": "NOTE: overrides voltage tier",
+      "target": "注意：会覆盖电压等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.projectmoduleassemblert2/prop:info#1|NOTE: overrides voltage tier",
+      "source": "NOTE: overrides voltage tier",
+      "target": "注意：会覆盖电压等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.projectmoduleassemblert3/prop:info#1|NOTE: overrides voltage tier",
+      "source": "NOTE: overrides voltage tier",
+      "target": "注意：会覆盖电压等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.fusioncomputer.tier.06/prop:info#1|NOTE: overrides voltage tier",
+      "source": "NOTE: overrides voltage tier",
+      "target": "注意：会覆盖电压等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.fusioncomputer.tier.07/prop:info#1|NOTE: overrides voltage tier",
+      "source": "NOTE: overrides voltage tier",
+      "target": "注意：会覆盖电压等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.fusioncomputer.tier.08/prop:info#1|NOTE: overrides voltage tier",
+      "source": "NOTE: overrides voltage tier",
+      "target": "注意：会覆盖电压等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.fusioncomputer.tier.09/prop:info#1|NOTE: overrides voltage tier",
+      "source": "NOTE: overrides voltage tier",
+      "target": "注意：会覆盖电压等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.fusioncomputer.tier.10/prop:info#1|NOTE: overrides voltage tier",
+      "source": "NOTE: overrides voltage tier",
+      "target": "注意：会覆盖电压等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.largefusioncomputer1/prop:info#1|NOTE: overrides voltage tier",
+      "source": "NOTE: overrides voltage tier",
+      "target": "注意：会覆盖电压等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.largefusioncomputer2/prop:info#1|NOTE: overrides voltage tier",
+      "source": "NOTE: overrides voltage tier",
+      "target": "注意：会覆盖电压等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.largefusioncomputer3/prop:info#1|NOTE: overrides voltage tier",
+      "source": "NOTE: overrides voltage tier",
+      "target": "注意：会覆盖电压等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.largefusioncomputer4/prop:info#1|NOTE: overrides voltage tier",
+      "source": "NOTE: overrides voltage tier",
+      "target": "注意：会覆盖电压等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.largefusioncomputer5/prop:info#1|NOTE: overrides voltage tier",
+      "source": "NOTE: overrides voltage tier",
+      "target": "注意：会覆盖电压等级"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.purificationunitextractor/prop:info#1|Machine not implemented",
+      "source": "Machine not implemented",
+      "target": "机器尚未实现"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.multimachine.purificationunituvtreatment/prop:info#1|Machine not implemented",
+      "source": "Machine not implemented",
+      "target": "机器尚未实现"
+    }
+  ],
+  "links": [
+    {
+      "key": "index.html|menu.link.github|https://github.com/ShadowTheAge/gtnh/",
+      "source": "https://github.com/ShadowTheAge/gtnh/",
+      "target": "https://github.com/KZdavid/gtnh-calc"
+    },
+    {
+      "key": "index.html|menu.link.wiki|https://wiki.gtnewhorizons.com/",
+      "source": "https://wiki.gtnewhorizons.com/",
+      "target": "https://gtnh.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5"
+    }
+  ]
+}
