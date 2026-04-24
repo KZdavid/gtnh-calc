@@ -1,5 +1,10 @@
 node_modules/
+desktop/node_modules/
 *.log
 .vscode/
 dist/
 src/data/
+release/
+.npm-cache-local/
+.local-node/
+.local-node-download/
