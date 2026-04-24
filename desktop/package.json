@@ -1,6 +1,6 @@
 {
   "name": "gtnh-calc-desktop",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Electron packaging dependencies for GTNH Calculator (isolated from main project)",
   "private": true,
   "devDependencies": {
