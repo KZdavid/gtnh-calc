@@ -12,7 +12,7 @@ const rootPackageJson = require(path.join(rootDir, "package.json"));
 const args = process.argv.slice(2);
 const builderArgs = args.length > 0 ? args : ["--win", "portable"];
 
-runCommand("npm", ["run", "build"]);
+runCommand("npm", ["run", "build:localized"]);
 
 closeRunningPackagedApp();
 
@@ -29,17 +29,32 @@ if (fs.existsSync(releaseDir)) {
 console.log("\nInstalling desktop packaging dependencies...");
 runCommand("npm", ["install"], { cwd: desktopDir });
 
-// Run electron-builder from the project root using the locally installed binary
-const ebBin = path.join(desktopDir, "node_modules", ".bin", "electron-builder");
-runCommand("node", [ebBin, ...builderArgs], {
+// Run electron-builder via cli.js directly to avoid shell shim issues on Windows.
+const electronPackageJsonPath = path.join(desktopDir, "node_modules", "electron", "package.json");
+const electronBuilderCliPath = path.join(desktopDir, "node_modules", "electron-builder", "cli.js");
+const electronDistPath = path.join(desktopDir, "node_modules", "electron", "dist");
+
+const electronPackageJson = JSON.parse(fs.readFileSync(electronPackageJsonPath, "utf8"));
+const electronVersion = electronPackageJson.version;
+
+const finalBuilderArgs = [
+    ...builderArgs,
+    "--config.electronVersion",
+    electronVersion,
+    "--config.electronDist",
+    electronDistPath,
+];
+
+runCommand("node", [electronBuilderCliPath, ...finalBuilderArgs], {
     env: { ...process.env, CSC_IDENTITY_AUTO_DISCOVERY: "false" },
+    shell: false,
 });
 
 function runCommand(command, commandArgs, options = {}) {
     const result = spawnSync(command, commandArgs, {
         cwd: options.cwd ?? rootDir,
         stdio: "inherit",
-        shell: true,
+        shell: options.shell ?? true,
         env: options.env ?? process.env,
     });
 
