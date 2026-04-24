@@ -1572,6 +1572,26 @@
       "target": "机器尚未实现"
     }
   ],
+  "codePatches": [
+    {
+      "id": "nei-tab-icon-inject-resolver",
+      "sourceFile": "src/nei.ts",
+      "source": "const tabs: NeiTab[] = [",
+      "target": "function findItemIconById(targetId: string): number | null {\n    for (const pointer of repository.items) {\n        const item = repository.GetObject(pointer, Item);\n        if (item.id === targetId) {\n            return item.iconId;\n        }\n    }\n    return null;\n}\n\nfunction findServiceItemIcon(serviceIndex: number): number | null {\n    if (serviceIndex < 0 || serviceIndex >= repository.service.length) {\n        return null;\n    }\n    const pointer = repository.service[serviceIndex];\n    if (pointer == null || pointer < 0) {\n        return null;\n    }\n    return repository.GetObject(pointer, Item).iconId;\n}\n\nfunction resolveTabIcon(stableId: string, serviceIndex: number, fallbackPointerIndex: number = 0): number {\n    return findItemIconById(stableId)\n        ?? findServiceItemIcon(serviceIndex)\n        ?? repository.GetObject(repository.items[fallbackPointerIndex], Item).iconId;\n}\n\nconst tabs: NeiTab[] = ["
+    },
+    {
+      "id": "nei-tab-icon-all-items",
+      "sourceFile": "src/nei.ts",
+      "source": "        iconId: repository.GetObject(repository.service[0], Item).iconId,",
+      "target": "        iconId: resolveTabIcon(\"i:questbook:ItemQuestBook:0\", 0),"
+    },
+    {
+      "id": "nei-tab-icon-all-recipes",
+      "sourceFile": "src/nei.ts",
+      "source": "        iconId: repository.GetObject(repository.service[1], Item).iconId,",
+      "target": "        iconId: resolveTabIcon(\"i:minecraft:anvil:0\", 1),"
+    }
+  ],
   "links": [
     {
       "key": "index.html|menu.link.github|https://github.com/ShadowTheAge/gtnh/",
