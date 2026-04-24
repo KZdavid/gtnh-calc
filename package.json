@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "copy-files": "copyfiles -u 0 \"index.html\" \"assets/**/*\" \"data/**/*\" dist/",
+    "locale:prepare-source": "node scripts/build-localized.cjs --prepare-only",
+    "build:localized": "node scripts/build-localized.cjs",
+    "build:localized:strict": "node scripts/build-localized.cjs --strict",
     "start": "concurrently \"tsc --watch\" \"live-server --mount=/:./dist --mount=/data/:./data/ --mount=/assets/:./assets/ --port=5500\"",
     "build": "tsc && npm run copy-files",
     "test": "jest",

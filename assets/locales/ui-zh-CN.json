@@ -1,0 +1,567 @@
+{
+  "locale": "zh-CN",
+  "translations": [
+    {
+      "key": "index.html|title|GTNH Calculator",
+      "source": "GTNH Calculator",
+      "target": "GTNH 计算器"
+    },
+    {
+      "key": "index.html|menu.header|Greg Tech: New Horizons Calculator",
+      "source": "Greg Tech: New Horizons Calculator",
+      "target": "GregTech: New Horizons 计算器"
+    },
+    {
+      "key": "index.html|menu.version|For GTNH version 2.8.0",
+      "source": "For GTNH version 2.8.0",
+      "target": "适用于 GTNH 2.8.0 版本"
+    },
+    {
+      "key": "index.html|menu.links.github|Github",
+      "source": "Github",
+      "target": "GitHub"
+    },
+    {
+      "key": "index.html|menu.links.wiki|Wiki",
+      "source": "Wiki",
+      "target": "Wiki"
+    },
+    {
+      "key": "index.html|menu.links.spreadsheet|Spreadsheet",
+      "source": "Spreadsheet",
+      "target": "数据表"
+    },
+    {
+      "key": "index.html|menu.pages.title|Pages",
+      "source": "Pages",
+      "target": "页面"
+    },
+    {
+      "key": "index.html|menu.pages.loadFile|Load from file",
+      "source": "Load from file",
+      "target": "从文件加载"
+    },
+    {
+      "key": "index.html|menu.pages.storageHint|Pages are stored in your browser's local storage. This may not be reliable. Please save important pages as files or URLs.",
+      "source": "Pages are stored in your browser's local storage. This may not be reliable. Please save important pages as files or URLs.",
+      "target": "页面保存在浏览器本地存储中，可靠性有限。重要页面请保存为文件或链接。"
+    },
+    {
+      "key": "index.html|menu.newPage.title|New Page",
+      "source": "New Page",
+      "target": "新建页面"
+    },
+    {
+      "key": "index.html|menu.newPage.placeholder|Page name",
+      "source": "Page name",
+      "target": "页面名称"
+    },
+    {
+      "key": "index.html|menu.newPage.create|Create",
+      "source": "Create",
+      "target": "创建"
+    },
+    {
+      "key": "index.html|recipe.products.title|Products:",
+      "source": "Products:",
+      "target": "产物："
+    },
+    {
+      "key": "index.html|recipe.products.hint|(You can use negative amounts for input goal)",
+      "source": "(You can use negative amounts for input goal)",
+      "target": "（若要表示输入目标，可使用负数）"
+    },
+    {
+      "key": "index.html|recipe.recipes.title|Recipes:",
+      "source": "Recipes:",
+      "target": "配方："
+    },
+    {
+      "key": "index.html|recipe.search.placeholder|Search...",
+      "source": "Search...",
+      "target": "搜索..."
+    },
+    {
+      "key": "index.html|nei.search.label|Search:",
+      "source": "Search:",
+      "target": "搜索："
+    },
+    {
+      "key": "index.html|nei.search.placeholder|Start typing for search",
+      "source": "Start typing for search",
+      "target": "输入关键字开始搜索"
+    },
+    {
+      "key": "index.html|confirm.yes|Yes",
+      "source": "Yes",
+      "target": "是"
+    },
+    {
+      "key": "index.html|confirm.no|No",
+      "source": "No",
+      "target": "否"
+    },
+    {
+      "key": "index.html|confirm.cancel|Cancel",
+      "source": "Cancel",
+      "target": "取消"
+    },
+    {
+      "key": "index.html|loading.title|LOADING...",
+      "source": "LOADING...",
+      "target": "加载中..."
+    },
+    {
+      "key": "index.html|loading.body|First time loading may take a while.",
+      "source": "First time loading may take a while.",
+      "target": "首次加载可能需要一些时间。"
+    },
+    {
+      "key": "index.html|loading.download|(Downloading 30MB of data)",
+      "source": "(Downloading 30MB of data)",
+      "target": "（正在下载 30MB 数据）"
+    },
+    {
+      "key": "src/dialogues.ts|showConfirmDialog.option1|Yes",
+      "source": "Yes",
+      "target": "是"
+    },
+    {
+      "key": "src/dialogues.ts|showConfirmDialog.option2|No",
+      "source": "No",
+      "target": "否"
+    },
+    {
+      "key": "src/dialogues.ts|showConfirmDialog.cancel|Cancel",
+      "source": "Cancel",
+      "target": "取消"
+    },
+    {
+      "key": "src/index.ts|loading.errorPrefix|An error occurred on loading:<br>",
+      "source": "An error occurred on loading:<br>",
+      "target": "加载时发生错误：<br>"
+    },
+    {
+      "key": "src/recipeList.ts|linkAlgorithm.ignore|Ignore",
+      "source": "Ignore",
+      "target": "忽略"
+    },
+    {
+      "key": "src/recipeList.ts|crafter.dropdown.select|Select crafter:",
+      "source": "Select crafter:",
+      "target": "选择加工机器："
+    },
+    {
+      "key": "src/recipeList.ts|crafter.dropdown.singleblockPrefix|Singleblock ",
+      "source": "Singleblock ",
+      "target": "单方块 "
+    },
+    {
+      "key": "src/recipeList.ts|crafter.fixedCount.toggle|Set fixed crafter count",
+      "source": "Set fixed crafter count",
+      "target": "设置固定机器数量"
+    },
+    {
+      "key": "src/recipeList.ts|crafter.fixedCount.label|Crafter count:",
+      "source": "Crafter count:",
+      "target": "机器数量："
+    },
+    {
+      "key": "src/recipeList.ts|crafter.fixedCount.hint|When using a fixed crafter count, you should remove the product from the desired product list and let it be calculated automatically. Otherwise, the model will likely become infeasible.",
+      "source": "When using a fixed crafter count, you should remove the product from the desired product list and let it be calculated automatically. Otherwise, the model will likely become infeasible.",
+      "target": "使用固定机器数量时，应将该产物从目标产物列表中移除并让系统自动计算，否则模型很可能变为不可行。"
+    },
+    {
+      "key": "src/recipeList.ts|missingRecipe.title|Missing recipe",
+      "source": "Missing recipe",
+      "target": "配方缺失"
+    },
+    {
+      "key": "src/recipeList.ts|missingRecipe.body|This recipe was deleted or changed. Replace or remove it. (Or load a different version of this app)",
+      "source": "This recipe was deleted or changed. Replace or remove it. (Or load a different version of this app)",
+      "target": "该配方已被删除或变更。请替换或移除它。（或加载此应用的其他版本）"
+    },
+    {
+      "key": "src/recipeList.ts|shortInfo.parallels|parallels",
+      "source": "parallels",
+      "target": "并行"
+    },
+    {
+      "key": "src/recipeList.ts|changedRecipe.title|This recipe was changed!",
+      "source": "This recipe was changed!",
+      "target": "该配方已变更！"
+    },
+    {
+      "key": "src/recipeList.ts|changedRecipe.accept|Accept",
+      "source": "Accept",
+      "target": "接受"
+    },
+    {
+      "key": "src/recipeList.ts|group.placeholder|Group name",
+      "source": "Group name",
+      "target": "分组名称"
+    },
+    {
+      "key": "src/recipeList.ts|table.power|POWER",
+      "source": "POWER",
+      "target": "功率"
+    },
+    {
+      "key": "src/recipeList.ts|table.inputs|INPUTS",
+      "source": "INPUTS",
+      "target": "输入"
+    },
+    {
+      "key": "src/recipeList.ts|table.outputs|OUTPUTS",
+      "source": "OUTPUTS",
+      "target": "输出"
+    },
+    {
+      "key": "src/recipeList.ts|group.total|Group total:",
+      "source": "Group total:",
+      "target": "分组合计："
+    },
+    {
+      "key": "src/recipeList.ts|settings.title|Settings:",
+      "source": "Settings:",
+      "target": "设置："
+    },
+    {
+      "key": "src/recipeList.ts|settings.minVoltage|Voltage tier for new recipes:",
+      "source": "Voltage tier for new recipes:",
+      "target": "新配方默认电压等级："
+    },
+    {
+      "key": "src/recipeList.ts|settings.timeUnit|Time unit:",
+      "source": "Time unit:",
+      "target": "时间单位："
+    },
+    {
+      "key": "src/recipeList.ts|settings.timeUnit.hour|Hours",
+      "source": "Hours",
+      "target": "小时"
+    },
+    {
+      "key": "src/recipeList.ts|settings.timeUnit.min|Minutes",
+      "source": "Minutes",
+      "target": "分钟"
+    },
+    {
+      "key": "src/recipeList.ts|settings.timeUnit.sec|Seconds",
+      "source": "Seconds",
+      "target": "秒"
+    },
+    {
+      "key": "src/recipeList.ts|settings.timeUnit.tick|Ticks",
+      "source": "Ticks",
+      "target": "刻"
+    },
+    {
+      "key": "src/recipeList.ts|settings.share|Share:",
+      "source": "Share:",
+      "target": "分享："
+    },
+    {
+      "key": "src/recipeList.ts|settings.copyLink|Copy shareable link to clipboard",
+      "source": "Copy shareable link to clipboard",
+      "target": "复制可分享链接到剪贴板"
+    },
+    {
+      "key": "src/recipeList.ts|settings.download|Download",
+      "source": "Download",
+      "target": "下载"
+    },
+    {
+      "key": "src/recipeList.ts|group.grandTotal|Grand total:",
+      "source": "Grand total:",
+      "target": "总计："
+    },
+    {
+      "key": "src/recipeList.ts|links.label|Links: (?)",
+      "source": "Links: (?)",
+      "target": "链接：(?)"
+    },
+    {
+      "key": "src/recipeList.ts|buttons.addRecipe|Add Recipe",
+      "source": "Add Recipe",
+      "target": "添加配方"
+    },
+    {
+      "key": "src/recipeList.ts|buttons.addGroup|Add Group",
+      "source": "Add Group",
+      "target": "添加分组"
+    },
+    {
+      "key": "src/recipeList.ts|buttons.hint|You can also add recipes by clicking on an item.",
+      "source": "You can also add recipes by clicking on an item.",
+      "target": "你也可以通过点击物品来添加配方。"
+    },
+    {
+      "key": "src/recipeList.ts|status.infeasible|Infeasible - There is no solution - You probably need to ignore some links",
+      "source": "Infeasible - There is no solution - You probably need to ignore some links",
+      "target": "不可行 - 当前无解 - 你可能需要忽略部分链接"
+    },
+    {
+      "key": "src/recipeList.ts|status.unbounded|Unbounded - Some items can be produced infinitely",
+      "source": "Unbounded - Some items can be produced infinitely",
+      "target": "无界 - 部分物品可无限生产"
+    },
+    {
+      "key": "src/recipeList.ts|status.solvedSuffix|is solved",
+      "source": "is solved",
+      "target": "已求解"
+    },
+    {
+      "key": "src/recipeList.ts|product.unknownPrefix|Unknown product: ",
+      "source": "Unknown product: ",
+      "target": "未知产物："
+    },
+    {
+      "key": "src/recipeList.ts|product.add|Add Product",
+      "source": "Add Product",
+      "target": "添加产物"
+    },
+    {
+      "key": "src/menu.ts|validate.title|The page you are about to load contains:",
+      "source": "The page you are about to load contains:",
+      "target": "你即将加载的页面包含："
+    },
+    {
+      "key": "src/menu.ts|validate.missingCountSuffix|missing recipe(s)",
+      "source": "missing recipe(s)",
+      "target": "个缺失配方"
+    },
+    {
+      "key": "src/menu.ts|validate.missingBody|A missing recipe is a recipe that was deleted or substantially changed. These recipes will be displayed as missing and must be deleted or replaced.",
+      "source": "A missing recipe is a recipe that was deleted or substantially changed. These recipes will be displayed as missing and must be deleted or replaced.",
+      "target": "缺失配方指已被删除或发生较大变更的配方。这些配方会显示为缺失，必须删除或替换。"
+    },
+    {
+      "key": "src/menu.ts|validate.changedCountSuffix|changed recipe(s)",
+      "source": "changed recipe(s)",
+      "target": "个变更配方"
+    },
+    {
+      "key": "src/menu.ts|validate.changedBody|A changed recipe is a recipe that was changed a bit and might break, but uses and produces the same items as before. These recipes were replaced with the best matching recipes.",
+      "source": "A changed recipe is a recipe that was changed a bit and might break, but uses and produces the same items as before. These recipes were replaced with the best matching recipes.",
+      "target": "变更配方指配方发生小幅变化，可能导致计算异常，但输入输出物品与之前一致。系统已将其替换为最匹配的配方。"
+    },
+    {
+      "key": "src/menu.ts|validate.versionHint|This is likely caused by the game version change.",
+      "source": "This is likely caused by the game version change.",
+      "target": "这通常是由游戏版本变化导致的。"
+    },
+    {
+      "key": "src/menu.ts|validate.ok|OK",
+      "source": "OK",
+      "target": "确定"
+    },
+    {
+      "key": "src/menu.ts|page.defaultName|New",
+      "source": "New",
+      "target": "新建"
+    },
+    {
+      "key": "src/menu.ts|title.suffix|GTNH calculator",
+      "source": "GTNH calculator",
+      "target": "GTNH 计算器"
+    },
+    {
+      "key": "src/menu.ts|import.conflictPrefix|A page named",
+      "source": "A page named",
+      "target": "页面“"
+    },
+    {
+      "key": "src/menu.ts|import.conflictSuffix|already exists. What would you like to do?",
+      "source": "already exists. What would you like to do?",
+      "target": "”已存在。你希望如何处理？"
+    },
+    {
+      "key": "src/menu.ts|import.createNew|Create New",
+      "source": "Create New",
+      "target": "新建一份"
+    },
+    {
+      "key": "src/menu.ts|import.replaceExisting|Replace Existing",
+      "source": "Replace Existing",
+      "target": "替换现有"
+    },
+    {
+      "key": "src/menu.ts|import.cancel|Cancel",
+      "source": "Cancel",
+      "target": "取消"
+    },
+    {
+      "key": "src/menu.ts|fileLoad.failed|Failed to load file:",
+      "source": "Failed to load file:",
+      "target": "加载文件失败："
+    },
+    {
+      "key": "src/menu.ts|delete.confirmPrefix|You are deleting page",
+      "source": "You are deleting page",
+      "target": "你正在删除页面"
+    },
+    {
+      "key": "src/menu.ts|delete.confirmSuffix|This action cannot be undone. Are you sure you want to continue?",
+      "source": "This action cannot be undone. Are you sure you want to continue?",
+      "target": "此操作不可撤销。确定要继续吗？"
+    },
+    {
+      "key": "src/menu.ts|delete.buttonPrefix|Delete",
+      "source": "Delete",
+      "target": "删除"
+    },
+    {
+      "key": "src/menu.ts|delete.cancel|Cancel",
+      "source": "Cancel",
+      "target": "取消"
+    },
+    {
+      "key": "src/nei.ts|conflicts.none|No recipe conflicts",
+      "source": "No recipe conflicts",
+      "target": "无配方冲突"
+    },
+    {
+      "key": "src/nei.ts|conflicts.singlePrefix|Recipe conflicts on circuit #",
+      "source": "Recipe conflicts on circuit #",
+      "target": "在电路 # 上存在配方冲突"
+    },
+    {
+      "key": "src/nei.ts|conflicts.multiPrefix|Recipe conflicts on circuits #",
+      "source": "Recipe conflicts on circuits #",
+      "target": "在电路 # 上存在配方冲突："
+    },
+    {
+      "key": "src/nei.ts|selectRecipe.button|Select recipe",
+      "source": "Select recipe",
+      "target": "选择此配方"
+    },
+    {
+      "key": "src/nei.ts|fuelType.diesel|Diesel",
+      "source": "Diesel",
+      "target": "柴油"
+    },
+    {
+      "key": "src/nei.ts|fuelType.gas|Gas",
+      "source": "Gas",
+      "target": "气体"
+    },
+    {
+      "key": "src/nei.ts|fuelType.hot|Hot",
+      "source": "Hot",
+      "target": "高温"
+    },
+    {
+      "key": "src/nei.ts|fuelType.denseSteam|Dense Steam",
+      "source": "Dense Steam",
+      "target": "浓缩蒸汽"
+    },
+    {
+      "key": "src/nei.ts|fuelType.plasma|Plasma",
+      "source": "Plasma",
+      "target": "等离子体"
+    },
+    {
+      "key": "src/nei.ts|fuelType.magic|Magic",
+      "source": "Magic",
+      "target": "魔力"
+    },
+    {
+      "key": "src/nei.ts|heat.prefix|Heat: ",
+      "source": "Heat: ",
+      "target": "热量："
+    },
+    {
+      "key": "src/nei.ts|heat.volc|Volc",
+      "source": "Volc",
+      "target": "火山炉"
+    },
+    {
+      "key": "src/nei.ts|heat.ebf|EBF",
+      "source": "EBF",
+      "target": "高炉"
+    },
+    {
+      "key": "src/nei.ts|fusion.toStart|To start: ",
+      "source": "To start: ",
+      "target": "启动需求："
+    },
+    {
+      "key": "src/nei.ts|nke.range|Kinetic energy: ",
+      "source": "Kinetic energy: ",
+      "target": "动能："
+    },
+    {
+      "key": "src/nei.ts|metadata.lowGravity|Requires low gravity",
+      "source": "Requires low gravity",
+      "target": "需要低重力环境"
+    },
+    {
+      "key": "src/nei.ts|metadata.cleanroom|Requires cleanroom",
+      "source": "Requires cleanroom",
+      "target": "需要洁净室"
+    },
+    {
+      "key": "src/nei.ts|metadata.fuelType|Fuel type: ",
+      "source": "Fuel type: ",
+      "target": "燃料类型："
+    },
+    {
+      "key": "src/nei.ts|metadata.fuelValue|Fuel value: ",
+      "source": "Fuel value: ",
+      "target": "燃料数值："
+    },
+    {
+      "key": "src/nei.ts|metadata.plasmaMulti|Multi-step plasma",
+      "source": "Multi-step plasma",
+      "target": "多步等离子"
+    },
+    {
+      "key": "src/nei.ts|metadata.plasmaSingle|Single-step plasma",
+      "source": "Single-step plasma",
+      "target": "单步等离子"
+    },
+    {
+      "key": "src/nei.ts|metadata.plasmaTier|Plasma tier: ",
+      "source": "Plasma tier: ",
+      "target": "等离子等级："
+    },
+    {
+      "key": "src/nei.ts|metadata.requiresTier|Requires tier ",
+      "source": "Requires tier ",
+      "target": "需要等级 "
+    },
+    {
+      "key": "src/nei.ts|metadata.glassTier|Glass tier: ",
+      "source": "Glass tier: ",
+      "target": "玻璃等级："
+    },
+    {
+      "key": "src/nei.ts|metadata.qftFocusTier|QFT focus tier: ",
+      "source": "QFT focus tier: ",
+      "target": "QFT 聚焦等级："
+    },
+    {
+      "key": "src/nei.ts|metadata.recycle|Recycle recipe",
+      "source": "Recycle recipe",
+      "target": "回收配方"
+    },
+    {
+      "key": "src/nei.ts|tab.allItems|All Items",
+      "source": "All Items",
+      "target": "全部物品"
+    },
+    {
+      "key": "src/nei.ts|tab.allRecipes|All Recipes",
+      "source": "All Recipes",
+      "target": "全部配方"
+    }
+  ],
+  "links": [
+    {
+      "key": "index.html|menu.link.github|https://github.com/ShadowTheAge/gtnh/",
+      "source": "https://github.com/ShadowTheAge/gtnh/",
+      "target": "https://github.com/KZdavid/gtnh-calc"
+    }
+  ]
+}
