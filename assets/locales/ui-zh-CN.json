@@ -424,7 +424,17 @@
     {
       "key": "src/menu.ts|ast:class:PageManager/method:setupEventListeners/function:<anonymous>#1|New",
       "source": "New",
-      "target": "新建"
+      "target": "新页面"
+    },
+    {
+      "key": "src/menu.ts|ast:class:PageManager/method:loadFirstPage#1|New",
+      "source": "New",
+      "target": "新页面"
+    },
+    {
+      "key": "src/menu.ts|ast:class:PageManager/method:deletePage/function:<anonymous>#1|New",
+      "source": "New",
+      "target": "新页面"
     },
     {
       "key": "src/menu.ts|title.suffix|GTNH calculator",

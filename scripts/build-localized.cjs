@@ -16,6 +16,7 @@ const distDir = path.join(rootDir, "dist");
 const args = process.argv.slice(2);
 const prepareOnly = args.includes("--prepare-only");
 const strict = args.includes("--strict");
+const findAstKeyMode = args.includes("--find-ast-key");
 
 const localeConfig = JSON.parse(fs.readFileSync(localeFile, "utf8"));
 const translations = localeConfig.translations ?? [];
@@ -23,6 +24,22 @@ const links = localeConfig.links ?? [];
 const codePatches = localeConfig.codePatches ?? [];
 const missingEntries = [];
 const decodedScopeCache = new Map();
+
+if (findAstKeyMode) {
+    const findFile = getArgValue(args, "--file");
+    const findText = getArgValue(args, "--text");
+    const findLineRaw = getArgValue(args, "--line");
+
+    if (!findFile || !findText) {
+        throw new Error("Usage: node scripts/build-localized.cjs --find-ast-key --file <path> --text <source> [--line <n>]");
+    }
+
+    const absoluteFile = path.isAbsolute(findFile) ? findFile : path.join(rootDir, findFile);
+    const findLine = findLineRaw ? Number.parseInt(findLineRaw, 10) : undefined;
+    const matches = findAstKeyMatches(absoluteFile, findText, Number.isFinite(findLine) ? findLine : undefined);
+    console.log(JSON.stringify(matches, null, 2));
+    process.exit(0);
+}
 
 prepareLocalizedSources();
 
@@ -243,6 +260,44 @@ function replaceInCodeStringLiterals(content, entry, scopeCache) {
     const replacementLiteral = buildReplacementLiteral(selected, entry.target);
     const next = content.slice(0, selected.start) + replacementLiteral + content.slice(selected.end);
     return { replaced: true, content: next };
+}
+
+function findAstKeyMatches(filePath, sourceText, lineNumber) {
+    if (!fs.existsSync(filePath)) {
+        throw new Error(`File does not exist: ${filePath}`);
+    }
+
+    const content = fs.readFileSync(filePath, "utf8");
+    const sourceFile = ts.createSourceFile(filePath, content, ts.ScriptTarget.Latest, true, getScriptKind(filePath));
+    const matches = collectLiteralMatches(sourceFile, sourceText);
+
+    return matches
+        .filter((match) => lineNumber == null || getLineNumber(sourceFile, match.start) === lineNumber)
+        .map((match) => ({
+            key: match.scopeLocator,
+            source: sourceText,
+            line: getLineNumber(sourceFile, match.start),
+        }));
+}
+
+function getLineNumber(sourceFile, position) {
+    return sourceFile.getLineAndCharacterOfPosition(position).line + 1;
+}
+
+function getScriptKind(filePath) {
+    if (filePath.endsWith(".ts")) return ts.ScriptKind.TS;
+    if (filePath.endsWith(".tsx")) return ts.ScriptKind.TSX;
+    if (filePath.endsWith(".js")) return ts.ScriptKind.JS;
+    if (filePath.endsWith(".jsx")) return ts.ScriptKind.JSX;
+    return ts.ScriptKind.Unknown;
+}
+
+function getArgValue(args, key) {
+    const index = args.indexOf(key);
+    if (index === -1 || index + 1 >= args.length) {
+        return undefined;
+    }
+    return args[index + 1];
 }
 
 function collectLiteralMatches(sourceFile, sourceText) {
