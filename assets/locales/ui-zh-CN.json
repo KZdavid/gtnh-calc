@@ -1254,27 +1254,37 @@
     {
       "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:shielding/prop:description#1|Shielding",
       "source": "Shielding",
-      "target": "护盾"
+      "target": "屏蔽核心方块等级"
     },
     {
       "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:manipulator/prop:description#1|Manipulator",
       "source": "Manipulator",
-      "target": "操控器"
+      "target": "脉冲控制方块等级"
     },
     {
       "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:focusedOutput/prop:description#1|Focused Output",
       "source": "Focused Output",
-      "target": "定向产出"
+      "target": "聚焦产物种类编号"
     },
     {
       "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:focusedAll/prop:description#1|Focus All",
       "source": "Focus All",
-      "target": "全产物聚焦"
+      "target": "是否全部聚焦"
     },
     {
       "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:focusedOutput/prop:choices#1|None",
       "source": "None",
-      "target": "无"
+      "target": "不聚焦"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:focusedAll/prop:choices#1|No",
+      "source": "No",
+      "target": "否"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:focusedAll/prop:choices#1|Yes",
+      "source": "Yes",
+      "target": "是"
     },
     {
       "key": "src/machines.ts|machine:gt.blockmachines.treefarm.controller.tier.single/prop:choices/prop:saw/prop:description#1|Saw",
@@ -1398,6 +1408,16 @@
     },
     {
       "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:shielding/prop:choices#1|Cosmic",
+      "source": "Cosmic",
+      "target": "寰宇"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:manipulator/prop:choices#1|Neutron",
+      "source": "Neutron",
+      "target": "中子"
+    },
+    {
+      "key": "src/machines.ts|machine:gt.blockmachines.quantumforcetransformer.controller.tier.single/prop:choices/prop:manipulator/prop:choices#1|Cosmic",
       "source": "Cosmic",
       "target": "寰宇"
     },
