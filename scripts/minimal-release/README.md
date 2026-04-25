@@ -3,7 +3,10 @@
 本包是 GTNH Calculator 的**最小源码发行版**，用于在本地浏览器中运行。  
 无需 Git，无需预装 Node.js（脚本可自动下载本地 Node 至 `.local-node/`，不影响系统环境）。
 
-> **注意**：本包为浏览器运行版，不含 Electron 桌面程序。
+默认配置为 **CDN 模式**（加载远程 `data.bin` / `atlas.webp`），
+也可将 `resource.config.js` 的 `resourceBaseUrl` 改为 `""` 切换到本地数据模式。
+
+> **注意**：本包为浏览器运行版，不含 Electron 桌面程序，也不内置 data 数据文件。
 
 ---
 
@@ -53,14 +56,23 @@ bash install.sh
 ## 包含内容
 
 ```
-源码与数据：  src/  assets/  data/  index.html
+源码：        src/  assets/  index.html
+配置文件：    resource.config.js（默认 CDN）
+本地占位：    data/（空目录）
 构建配置：    package.json  tsconfig.json
 授权协议：    LICENSE
 入口脚本：    install.*  run-local.*  clean.*
 工作流脚本：  scripts/minimal-release/
 ```
 
-**不含**：Electron 程序、预构建产物（`dist/`）、`node_modules/`、`export/` 目录
+**不含**：Electron 程序、预构建产物（`dist/`）、`node_modules/`、`export/` 目录、data 数据文件（`data.bin` / `atlas.webp`）
+
+## 数据源切换
+
+- 默认：`resource.config.js` 使用 jsDelivr CDN
+- 本地模式：将 `resourceBaseUrl` 改为 `""`
+- 本地文件位置：`dist/data/data.bin` 与 `dist/data/atlas.webp`
+- 可参考：`resource.config.local.example.js`
 
 ---
 

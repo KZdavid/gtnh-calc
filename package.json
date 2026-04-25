@@ -13,6 +13,7 @@
     "package:desktop": "node scripts/package-desktop.cjs",
     "package:win": "npm run package:desktop -- --win portable",
     "package:minimal": "node scripts/package-minimal-release.cjs",
+    "package:hosting": "node scripts/package-hosting-release.cjs",
     "package:all": "node scripts/package-all.cjs",
     "test": "jest",
     "test:watch": "jest --watch",
