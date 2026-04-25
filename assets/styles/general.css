@@ -35,6 +35,7 @@
     --font-ui-secondary-latin: "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "Liberation Sans", sans-serif;
     --font-ui-secondary: var(--font-ui-secondary-latin);
     --font-ui: var(--font-ui-primary), var(--font-ui-secondary);
+    --resource-atlas-url: url('./../../data/atlas.webp');
     --font-ui-size: 16px;
     --font-ui-line-height: 22px;
     --font-ui-control-size: 16px;
@@ -183,7 +184,7 @@ input::placeholder {
     height: 32px;
     background-repeat: no-repeat;
 
-    background-image: url('./../../data/atlas.webp');
+    background-image: var(--resource-atlas-url);
     background-position: var(--pos-x) var(--pos-y);
 }
 
@@ -193,7 +194,7 @@ item-icon {
     position: relative;
     background-repeat: no-repeat;
     pointer-events: auto;
-    background-image: url('./../../data/atlas.webp');
+    background-image: var(--resource-atlas-url);
     background-position: var(--pos-x) var(--pos-y);
 }
 
