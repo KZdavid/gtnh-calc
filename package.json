@@ -8,7 +8,7 @@
     "locale:prepare-source": "node scripts/build-localized.cjs --prepare-only",
     "build:localized": "node scripts/build-localized.cjs",
     "build:localized:strict": "node scripts/build-localized.cjs --strict",
-    "start": "concurrently \"tsc --watch\" \"live-server --mount=/:./dist --mount=/data/:./data/ --mount=/assets/:./assets/ --port=5500\"",
+    "start": "concurrently \"tsc --watch\" \"live-server --root=dist --mount=/data:../data --port=5500 --open=index.html\"",
     "build": "tsc && npm run copy-files",
     "package:desktop": "node scripts/package-desktop.cjs",
     "package:win": "npm run package:desktop -- --win portable",

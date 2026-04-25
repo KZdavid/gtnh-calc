@@ -60,10 +60,6 @@ copyFile(path.join(minimalDir, "run-local.sh"), path.join(bundleDir, "run-local.
 copyFile(path.join(minimalDir, "clean.ps1"), path.join(bundleDir, "clean.ps1"));
 copyFile(path.join(minimalDir, "clean.sh"), path.join(bundleDir, "clean.sh"));
 
-// Remove all source map files to eliminate references to .localized-build
-removeSourceMaps(bundleDir);
-removeSourceMapComments(bundleDir);
-
 writeResourceConfigFiles(bundleDir);
 rewriteIndexResourceConfig(path.join(bundleDir, "index.html"));
 ensureDataPlaceholders(bundleDir);
