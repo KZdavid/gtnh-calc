@@ -8,8 +8,13 @@ declare global {
     }
 }
 
-const DEFAULT_DATA_PATH = "./data.bin";
-const DEFAULT_ATLAS_PATH = "./atlas.webp";
+
+// For local mode, use data/data.bin and data/atlas.webp
+const LOCAL_DATA_PATH = "./data/data.bin";
+const LOCAL_ATLAS_PATH = "./data/atlas.webp";
+// For CDN mode, use data.bin and atlas.webp in root
+const CDN_DATA_PATH = "./data.bin";
+const CDN_ATLAS_PATH = "./atlas.webp";
 
 function trimLeadingDotSlash(path: string): string {
     return path.replace(/^\.\//, "");
@@ -25,21 +30,31 @@ function getRuntimeConfig(): RuntimeResourceConfig {
 
 function resolveConfiguredUrl(path: string): string {
     const { resourceBaseUrl } = getRuntimeConfig();
+    const normalizedPath = trimLeadingDotSlash(path);
+
     if (!resourceBaseUrl) {
-        return path;
+        return new URL(normalizedPath, document.baseURI).toString();
     }
 
-    return new URL(trimLeadingDotSlash(path), normalizeBaseUrl(resourceBaseUrl)).toString();
+    const baseUrl = new URL(normalizeBaseUrl(resourceBaseUrl), document.baseURI).toString();
+    return new URL(normalizedPath, baseUrl).toString();
 }
 
+
+// If resourceBaseUrl is set, use CDN paths; otherwise use local paths
 export function getRepositoryDataUrl(): string {
-    return resolveConfiguredUrl(DEFAULT_DATA_PATH);
+    const { resourceBaseUrl } = getRuntimeConfig();
+    return resolveConfiguredUrl(resourceBaseUrl ? CDN_DATA_PATH : LOCAL_DATA_PATH);
 }
 
 export function getAtlasUrl(): string {
-    return resolveConfiguredUrl(DEFAULT_ATLAS_PATH);
+    const { resourceBaseUrl } = getRuntimeConfig();
+    return resolveConfiguredUrl(resourceBaseUrl ? CDN_ATLAS_PATH : LOCAL_ATLAS_PATH);
 }
 
 export function applyResourceCssVariables(): void {
-    document.documentElement.style.setProperty("--resource-atlas-url", `url(\"${getAtlasUrl()}\")`);
+    document.documentElement.style.setProperty(
+        "--resource-atlas-url",
+        `url("${getAtlasUrl()}")`
+    );
 }
