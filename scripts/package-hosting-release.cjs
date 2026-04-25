@@ -3,66 +3,50 @@ const path = require("path");
 const { spawnSync } = require("child_process");
 
 const rootDir = path.join(__dirname, "..");
-const localizedRoot = path.join(rootDir, ".localized-build");
 const releaseDir = path.join(rootDir, "release");
+const distDir = path.join(rootDir, "dist");
 const packageJson = require(path.join(rootDir, "package.json"));
 
-const bundleName = `GTNH-Calculator-${packageJson.version}-minimal-source`;
+const bundleName = `GTNH-Calculator-${packageJson.version}-hosting`;
 const bundleDir = path.join(releaseDir, bundleName);
 const zipPath = path.join(releaseDir, `${bundleName}.zip`);
 
-const includePaths = [
-    "src",
-    "assets",
-    "scripts",
-    "index.html",
-    "package.json",
-    // package-lock.json is intentionally excluded: npm v7+ would use the lockfile to restore all
-    // locked packages (including Electron), even when only specific packages are requested.
-    "tsconfig.json",
-    "LICENSE",
-    ".gitignore",
-];
-
-const excludeRootDirs = new Set([
-    "node_modules",
-    "dist",
-    "release",
-    "export",
-    ".git",
-    ".github",
-    "desktop",
-    "tests",
-]);
+if (!fs.existsSync(distDir)) {
+    console.error("dist/ not found. Please run build first (for example: npm run build:localized).");
+    process.exit(1);
+}
 
 ensureDirectory(releaseDir);
 recreateDirectory(bundleDir);
 
-// Prepare localized sources so minimal package ships localized src/index content.
-runCommand("node", ["scripts/build-localized.cjs", "--prepare-only"]);
+fs.cpSync(distDir, bundleDir, { recursive: true, force: true });
 
-for (const relPath of includePaths) {
-    const srcPath = resolvePackageSourcePath(relPath);
-    const dstPath = path.join(bundleDir, relPath);
-    if (!fs.existsSync(srcPath)) {
-        continue;
+// Remove source maps and mapping comments to avoid release-time 404 noise.
+removeSourceMaps(bundleDir);
+removeSourceMapComments(bundleDir);
+
+// Remove any local data payloads/residual test folders from dist snapshot.
+const dataCandidates = ["data", "data_local_bak", "data.bak", "data_backup"];
+for (const name of dataCandidates) {
+    const candidatePath = path.join(bundleDir, name);
+    if (fs.existsSync(candidatePath)) {
+        fs.rmSync(candidatePath, { recursive: true, force: true });
     }
-
-    copyWithExcludes(srcPath, dstPath, relPath.split(path.sep)[0]);
 }
 
-const minimalDir = path.join(bundleDir, "scripts", "minimal-release");
-copyFile(path.join(minimalDir, "README.md"), path.join(bundleDir, "README.md"));
-copyFile(path.join(minimalDir, "install.ps1"), path.join(bundleDir, "install.ps1"));
-copyFile(path.join(minimalDir, "install.sh"), path.join(bundleDir, "install.sh"));
-copyFile(path.join(minimalDir, "run-local.ps1"), path.join(bundleDir, "run-local.ps1"));
-copyFile(path.join(minimalDir, "run-local.sh"), path.join(bundleDir, "run-local.sh"));
-copyFile(path.join(minimalDir, "clean.ps1"), path.join(bundleDir, "clean.ps1"));
-copyFile(path.join(minimalDir, "clean.sh"), path.join(bundleDir, "clean.sh"));
+const testsDir = path.join(bundleDir, "tests");
+if (fs.existsSync(testsDir)) {
+    fs.rmSync(testsDir, { recursive: true, force: true });
+}
 
+// Hosting package ships no data payload by default.
+const dataDir = path.join(bundleDir, "data");
+fs.mkdirSync(dataDir, { recursive: true });
+
+writeDataReadme(dataDir);
 writeResourceConfigFiles(bundleDir);
 rewriteIndexResourceConfig(path.join(bundleDir, "index.html"));
-ensureDataPlaceholders(bundleDir);
+copyHostingReadme(bundleDir);
 
 if (fs.existsSync(zipPath)) {
     fs.rmSync(zipPath, { force: true });
@@ -76,7 +60,7 @@ runCommand("powershell", [
 
 const stat = fs.statSync(zipPath);
 const sizeMb = (stat.size / (1024 * 1024)).toFixed(2);
-console.log(`Minimal source package created: ${zipPath} (${sizeMb} MB)`);
+console.log(`Hosting package created: ${zipPath} (${sizeMb} MB)`);
 
 function ensureDirectory(dirPath) {
     if (fs.existsSync(dirPath) && !fs.statSync(dirPath).isDirectory()) {
@@ -90,50 +74,6 @@ function recreateDirectory(dirPath) {
         fs.rmSync(dirPath, { recursive: true, force: true });
     }
     fs.mkdirSync(dirPath, { recursive: true });
-}
-
-function copyWithExcludes(srcPath, dstPath, rootSegment) {
-    const base = path.basename(srcPath);
-
-    if (rootSegment === "scripts" && base === "minimal-release") {
-        fs.cpSync(srcPath, dstPath, { recursive: true, force: true });
-        return;
-    }
-
-    if (rootSegment === "scripts" && (base === "dev" || base === "inspect-database.mjs")) {
-        return;
-    }
-
-    if (excludeRootDirs.has(base) && srcPath === path.join(rootDir, base)) {
-        return;
-    }
-
-    if (fs.statSync(srcPath).isDirectory()) {
-        fs.mkdirSync(dstPath, { recursive: true });
-        const entries = fs.readdirSync(srcPath);
-        for (const entry of entries) {
-            const childSrc = path.join(srcPath, entry);
-            const childDst = path.join(dstPath, entry);
-            if (entry === "node_modules" || entry === "dist" || entry === "release" || entry === "export" || entry === ".git" || (rootSegment === "scripts" && entry === "dev")) {
-                continue;
-            }
-            copyWithExcludes(childSrc, childDst, rootSegment);
-        }
-        return;
-    }
-
-    fs.mkdirSync(path.dirname(dstPath), { recursive: true });
-    fs.copyFileSync(srcPath, dstPath);
-}
-
-function resolvePackageSourcePath(relPath) {
-    if (relPath === "src") {
-        return path.join(localizedRoot, "src");
-    }
-    if (relPath === "index.html") {
-        return path.join(localizedRoot, "index.html");
-    }
-    return path.join(rootDir, relPath);
 }
 
 function removeSourceMaps(dirPath) {
@@ -184,12 +124,6 @@ function removeSourceMapComments(dirPath) {
         }
     }
 }
-
-function copyFile(src, dst) {
-    fs.mkdirSync(path.dirname(dst), { recursive: true });
-    fs.copyFileSync(src, dst);
-}
-
 function rewriteIndexResourceConfig(indexPath) {
     if (!fs.existsSync(indexPath)) {
         return;
@@ -214,12 +148,18 @@ function writeResourceConfigFiles(outputDir) {
     fs.writeFileSync(localExamplePath, localExampleConfig, "utf8");
 }
 
-function ensureDataPlaceholders(outputDir) {
-    const dataDir = path.join(outputDir, "data");
-    fs.mkdirSync(dataDir, { recursive: true });
-    const readmePath = path.join(dataDir, "README.md");
-    const readme = `This folder is intentionally empty in the minimal source package.\n\nTo use local data mode (resourceBaseUrl = \"\"), place these files here:\n- data.bin\n- atlas.webp\n\nRecommended source:\nhttps://github.com/KZdavid/gtnh-calc-data-zh-CN/releases\n`;
+function writeDataReadme(outputDataDir) {
+    const readmePath = path.join(outputDataDir, "README.md");
+    const readme = `This folder is intentionally empty in the hosting package.\n\nTo use local data mode (resourceBaseUrl = \"\"), place these files here:\n- data.bin\n- atlas.webp\n\nRecommended source:\nhttps://github.com/KZdavid/gtnh-calc-data-zh-CN/releases\n`;
     fs.writeFileSync(readmePath, readme, "utf8");
+}
+
+function copyHostingReadme(outputDir) {
+    const srcReadme = path.join(rootDir, "scripts", "minimal-release", "README-hosting.md");
+    const dstReadme = path.join(outputDir, "README.md");
+    if (fs.existsSync(srcReadme)) {
+        fs.copyFileSync(srcReadme, dstReadme);
+    }
 }
 
 function runCommand(command, args) {
