@@ -30,11 +30,14 @@ function getRuntimeConfig(): RuntimeResourceConfig {
 
 function resolveConfiguredUrl(path: string): string {
     const { resourceBaseUrl } = getRuntimeConfig();
+    const normalizedPath = trimLeadingDotSlash(path);
+
     if (!resourceBaseUrl) {
-        return path;
+        return new URL(normalizedPath, document.baseURI).toString();
     }
 
-    return new URL(trimLeadingDotSlash(path), normalizeBaseUrl(resourceBaseUrl)).toString();
+    const baseUrl = new URL(normalizeBaseUrl(resourceBaseUrl), document.baseURI).toString();
+    return new URL(normalizedPath, baseUrl).toString();
 }
 
 
@@ -50,5 +53,8 @@ export function getAtlasUrl(): string {
 }
 
 export function applyResourceCssVariables(): void {
-    document.documentElement.style.setProperty("--resource-atlas-url", `url(\"${getAtlasUrl()}\")`);
+    document.documentElement.style.setProperty(
+        "--resource-atlas-url",
+        `url("${getAtlasUrl()}")`
+    );
 }

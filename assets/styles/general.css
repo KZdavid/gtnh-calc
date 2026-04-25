@@ -35,7 +35,6 @@
     --font-ui-secondary-latin: "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "Liberation Sans", sans-serif;
     --font-ui-secondary: var(--font-ui-secondary-latin);
     --font-ui: var(--font-ui-primary), var(--font-ui-secondary);
-    --resource-atlas-url: url('./../../data/atlas.webp');
     --font-ui-size: 16px;
     --font-ui-line-height: 22px;
     --font-ui-control-size: 16px;
