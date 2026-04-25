@@ -7,6 +7,7 @@ const releaseDir = path.join(rootDir, "release");
 
 runCommand("npm", ["run", "package:win"]);
 runCommand("npm", ["run", "package:minimal"]);
+runCommand("npm", ["run", "package:hosting"]);
 
 printReleaseArtifacts();
 

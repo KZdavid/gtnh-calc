@@ -99,7 +99,38 @@ function Run-Build($tools) {
     & $tools.Npm run build
     if ($LASTEXITCODE -ne 0) { return $false }
 
+    Ensure-DataPlaceholders
+    Sync-ResourceConfigToDist
+
     return $true
+}
+
+function Ensure-DataPlaceholders() {
+    $rootData = Join-Path $PSScriptRoot "data"
+    $distData = Join-Path $PSScriptRoot "dist\data"
+    $readmeText = @"
+This folder is intentionally empty in the minimal source package.
+
+To use local data mode (resourceBaseUrl = ""), place these files here:
+- data.bin
+- atlas.webp
+
+Recommended source:
+https://github.com/KZdavid/gtnh-calc-data-zh-CN/releases
+"@
+
+    New-Item -ItemType Directory -Force -Path $rootData | Out-Null
+    New-Item -ItemType Directory -Force -Path $distData | Out-Null
+    Set-Content -Path (Join-Path $rootData "README.md") -Value $readmeText -Encoding UTF8
+    Set-Content -Path (Join-Path $distData "README.md") -Value $readmeText -Encoding UTF8
+}
+
+function Sync-ResourceConfigToDist() {
+    $rootConfig = Join-Path $PSScriptRoot "resource.config.js"
+    $distConfig = Join-Path $PSScriptRoot "dist\resource.config.js"
+    if (Test-Path $rootConfig) {
+        Copy-Item -Force $rootConfig $distConfig
+    }
 }
 
 $tools = Resolve-Toolchain

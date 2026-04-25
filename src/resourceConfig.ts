@@ -8,8 +8,8 @@ declare global {
     }
 }
 
-const DEFAULT_DATA_PATH = "./data/data.bin";
-const DEFAULT_ATLAS_PATH = "./data/atlas.webp";
+const DEFAULT_DATA_PATH = "./data.bin";
+const DEFAULT_ATLAS_PATH = "./atlas.webp";
 
 function trimLeadingDotSlash(path: string): string {
     return path.replace(/^\.\//, "");

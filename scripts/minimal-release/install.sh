@@ -156,6 +156,9 @@ run_build() {
       "$NODE_BIN" "$npm_cli" install --no-save --cache .npm-cache-local "${MIN_PACKAGES[@]}"
       assert_writable_assets || return 1
       "$NODE_BIN" "$npm_cli" run build
+
+      ensure_data_placeholders
+      sync_resource_config_to_dist
       return
     fi
   fi
@@ -163,6 +166,32 @@ run_build() {
   "$NPM_CMD" install --no-save --cache .npm-cache-local "${MIN_PACKAGES[@]}"
   assert_writable_assets || return 1
   "$NPM_CMD" run build
+
+  ensure_data_placeholders
+  sync_resource_config_to_dist
+}
+
+ensure_data_placeholders() {
+  local readme_text
+  readme_text='This folder is intentionally empty in the minimal source package.
+
+To use local data mode (resourceBaseUrl = ""), place these files here:
+- data.bin
+- atlas.webp
+
+Recommended source:
+https://github.com/KZdavid/gtnh-calc-data-zh-CN/releases
+'
+
+  mkdir -p "$SCRIPT_DIR/data" "$SCRIPT_DIR/dist/data"
+  printf "%s" "$readme_text" > "$SCRIPT_DIR/data/README.md"
+  printf "%s" "$readme_text" > "$SCRIPT_DIR/dist/data/README.md"
+}
+
+sync_resource_config_to_dist() {
+  if [[ -f "$SCRIPT_DIR/resource.config.js" ]]; then
+    cp -f "$SCRIPT_DIR/resource.config.js" "$SCRIPT_DIR/dist/resource.config.js"
+  fi
 }
 
 resolve_toolchain
