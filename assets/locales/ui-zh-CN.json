@@ -377,6 +377,16 @@
       "target": "添加产物"
     },
     {
+      "key": "src/recipeList.ts|literal:ShowTooltip.change_recipe.header|Change Recipe",
+      "source": "Change Recipe",
+      "target": "更换配方"
+    },
+    {
+      "key": "src/recipeList.ts|literal:ShowTooltip.change_recipe.text|Click to select a different recipe",
+      "source": "Click to select a different recipe",
+      "target": "点击以选择其他配方"
+    },
+    {
       "key": "src/menu.ts|ast:function:ValidateAndNotify/var:message#1|The page you are about to load contains:",
       "source": "The page you are about to load contains:",
       "target": "你即将加载的页面包含："
@@ -414,7 +424,17 @@
     {
       "key": "src/menu.ts|ast:class:PageManager/method:setupEventListeners/function:<anonymous>#1|New",
       "source": "New",
-      "target": "新建"
+      "target": "新页面"
+    },
+    {
+      "key": "src/menu.ts|ast:class:PageManager/method:loadFirstPage#1|New",
+      "source": "New",
+      "target": "新页面"
+    },
+    {
+      "key": "src/menu.ts|ast:class:PageManager/method:deletePage/function:<anonymous>#1|New",
+      "source": "New",
+      "target": "新页面"
     },
     {
       "key": "src/menu.ts|title.suffix|GTNH calculator",
@@ -1495,6 +1515,76 @@
       "key": "src/machines.ts|ast:var:EyeOfHarmonyTierNames#1|9 - Gallifreyan",
       "source": "9 - Gallifreyan",
       "target": "9 - 鸿蒙"
+    },
+    {
+      "key": "src/utils.ts|ast:var:CoilTierNames#1|Cupronickel",
+      "source": "Cupronickel",
+      "target": "白铜"
+    },
+    {
+      "key": "src/utils.ts|ast:var:CoilTierNames#1|Kanthal",
+      "source": "Kanthal",
+      "target": "坎塔尔合金"
+    },
+    {
+      "key": "src/utils.ts|ast:var:CoilTierNames#1|Nichrome",
+      "source": "Nichrome",
+      "target": "镍铬合金"
+    },
+    {
+      "key": "src/utils.ts|ast:var:CoilTierNames#1|TPV",
+      "source": "TPV",
+      "target": "钛铂钒合金"
+    },
+    {
+      "key": "src/utils.ts|ast:var:CoilTierNames#1|HSS-G",
+      "source": "HSS-G",
+      "target": "高速钢-G"
+    },
+    {
+      "key": "src/utils.ts|ast:var:CoilTierNames#1|HSS-S",
+      "source": "HSS-S",
+      "target": "高速钢-S"
+    },
+    {
+      "key": "src/utils.ts|ast:var:CoilTierNames#1|Naquadah",
+      "source": "Naquadah",
+      "target": "硅岩"
+    },
+    {
+      "key": "src/utils.ts|ast:var:CoilTierNames#1|Naquadah Alloy",
+      "source": "Naquadah Alloy",
+      "target": "硅岩合金"
+    },
+    {
+      "key": "src/utils.ts|ast:var:CoilTierNames#1|Trinium",
+      "source": "Trinium",
+      "target": "三元金属"
+    },
+    {
+      "key": "src/utils.ts|ast:var:CoilTierNames#1|Electrum Flux",
+      "source": "Electrum Flux",
+      "target": "通流琥珀金"
+    },
+    {
+      "key": "src/utils.ts|ast:var:CoilTierNames#1|Awakened Draconium",
+      "source": "Awakened Draconium",
+      "target": "觉醒龙锭"
+    },
+    {
+      "key": "src/utils.ts|ast:var:CoilTierNames#1|Infinity",
+      "source": "Infinity",
+      "target": "无尽"
+    },
+    {
+      "key": "src/utils.ts|ast:var:CoilTierNames#1|Hypogen",
+      "source": "Hypogen",
+      "target": "海珀珍"
+    },
+    {
+      "key": "src/utils.ts|ast:var:CoilTierNames#1|Eternal",
+      "source": "Eternal",
+      "target": "永恒"
     },
     {
       "key": "src/machines.ts|machine:gt.blockmachines.neutronactivator/prop:info/function:info#1|INFO: Requires ",
