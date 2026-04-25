@@ -12,7 +12,6 @@
     "start:dev": "concurrently \"tsc --watch --project tsconfig.dev.json\" \"live-server --mount=/:./dist --mount=/data:./data --mount=/assets:./assets --port=5500\"",
     "build": "tsc && npm run copy-files",
     "package:desktop": "node scripts/package-desktop.cjs",
-    "package:win": "npm run package:desktop -- --win portable",
     "package:minimal": "node scripts/package-minimal-release.cjs",
     "package:hosting": "node scripts/package-hosting-release.cjs",
     "package:all": "node scripts/package-all.cjs",

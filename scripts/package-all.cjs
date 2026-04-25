@@ -5,9 +5,11 @@ const { spawnSync } = require("child_process");
 const rootDir = path.join(__dirname, "..");
 const releaseDir = path.join(rootDir, "release");
 
-runCommand("npm", ["run", "package:win"]);
+runCommand("npm", ["run", "clear"]);
+runCommand("npm", ["run", "build:localized"]);
 runCommand("npm", ["run", "package:minimal"]);
 runCommand("npm", ["run", "package:hosting"]);
+runCommand("npm", ["run", "package:desktop"]);
 
 printReleaseArtifacts();
 

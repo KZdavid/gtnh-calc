@@ -5,6 +5,7 @@ const { spawnSync } = require("child_process");
 const rootDir = path.join(__dirname, "..");
 const desktopDir = path.join(rootDir, "desktop");
 const releaseDir = path.join(rootDir, "release");
+const desktopWorkDir = path.join(releaseDir, "desktop-work");
 // Read build config from the dedicated electron-builder config (not polluting root package.json)
 const builderConfig = require(path.join(rootDir, "electron-builder.json"));
 const rootPackageJson = require(path.join(rootDir, "package.json"));
@@ -16,14 +17,8 @@ runCommand("npm", ["run", "build:localized"]);
 
 closeRunningPackagedApp();
 
-if (fs.existsSync(releaseDir)) {
-    try {
-        fs.rmSync(releaseDir, { recursive: true, force: true });
-    } catch (error) {
-        console.warn("Unable to fully clean release directory, continuing with incremental packaging.");
-        console.warn(error.message);
-    }
-}
+ensureDirectory(releaseDir);
+recreateDirectory(desktopWorkDir);
 
 // Install electron / electron-builder from the isolated desktop package
 console.log("\nInstalling desktop packaging dependencies...");
@@ -43,12 +38,17 @@ const finalBuilderArgs = [
     electronVersion,
     "--config.electronDist",
     electronDistPath,
+    "--config.directories.output",
+    desktopWorkDir,
 ];
 
 runCommand("node", [electronBuilderCliPath, ...finalBuilderArgs], {
     env: { ...process.env, CSC_IDENTITY_AUTO_DISCOVERY: "false" },
     shell: false,
 });
+
+moveWorkArtifactsToRelease(desktopWorkDir, releaseDir);
+recreateDirectory(desktopWorkDir);
 
 function runCommand(command, commandArgs, options = {}) {
     const result = spawnSync(command, commandArgs, {
@@ -61,6 +61,45 @@ function runCommand(command, commandArgs, options = {}) {
     if (result.status !== 0) {
         process.exit(result.status ?? 1);
     }
+}
+
+function moveWorkArtifactsToRelease(srcDir, destDir) {
+    if (!fs.existsSync(srcDir)) {
+        return;
+    }
+
+    const artifactExtensions = new Set([".exe", ".zip", ".nupkg", ".AppImage", ".dmg", ".snap", ".msi"]);
+    const entries = fs.readdirSync(srcDir);
+
+    for (const name of entries) {
+        const srcPath = path.join(srcDir, name);
+        const dstPath = path.join(destDir, name);
+        const ext = path.extname(name);
+
+        if (!artifactExtensions.has(ext)) {
+            continue;
+        }
+
+        if (fs.existsSync(dstPath)) {
+            fs.rmSync(dstPath, { recursive: true, force: true });
+        }
+
+        fs.renameSync(srcPath, dstPath);
+    }
+}
+
+function ensureDirectory(dirPath) {
+    if (fs.existsSync(dirPath) && !fs.statSync(dirPath).isDirectory()) {
+        throw new Error(`Path exists and is not directory: ${dirPath}`);
+    }
+    fs.mkdirSync(dirPath, { recursive: true });
+}
+
+function recreateDirectory(dirPath) {
+    if (fs.existsSync(dirPath)) {
+        fs.rmSync(dirPath, { recursive: true, force: true });
+    }
+    fs.mkdirSync(dirPath, { recursive: true });
 }
 
 function closeRunningPackagedApp() {
