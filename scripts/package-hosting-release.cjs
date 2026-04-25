@@ -160,6 +160,12 @@ function copyHostingReadme(outputDir) {
     if (fs.existsSync(srcReadme)) {
         fs.copyFileSync(srcReadme, dstReadme);
     }
+
+    const srcReadmeEn = path.join(rootDir, "scripts", "minimal-release", "README-hosting_EN.md");
+    const dstReadmeEn = path.join(outputDir, "README_EN.md");
+    if (fs.existsSync(srcReadmeEn)) {
+        fs.copyFileSync(srcReadmeEn, dstReadmeEn);
+    }
 }
 
 function runCommand(command, args) {
