@@ -1,0 +1,25 @@
+{
+  "appId": "com.gtnh.calculator",
+  "productName": "GTNH Calculator",
+  "artifactName": "GTNH-Calculator-${version}-${arch}.${ext}",
+  "asar": false,
+  "extraMetadata": {
+    "main": "desktop/main.cjs"
+  },
+  "files": [
+    "dist/**/*",
+    "desktop/main.cjs",
+    "package.json"
+  ],
+  "directories": {
+    "output": "release",
+    "buildResources": "assets/images"
+  },
+  "win": {
+    "signAndEditExecutable": false,
+    "icon": "assets/images/app-icon.ico",
+    "target": [
+      "portable"
+    ]
+  }
+}

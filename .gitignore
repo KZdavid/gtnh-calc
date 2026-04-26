@@ -1,5 +1,11 @@
 node_modules/
+desktop/node_modules/
 *.log
 .vscode/
 dist/
 src/data/
+release/
+.localized-build/
+.npm-cache-local/
+.local-node/
+.local-node-download/

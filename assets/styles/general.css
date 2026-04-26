@@ -183,7 +183,7 @@ input::placeholder {
     height: 32px;
     background-repeat: no-repeat;
 
-    background-image: url('./../../data/atlas.webp');
+    background-image: var(--resource-atlas-url);
     background-position: var(--pos-x) var(--pos-y);
 }
 
@@ -193,7 +193,7 @@ item-icon {
     position: relative;
     background-repeat: no-repeat;
     pointer-events: auto;
-    background-image: url('./../../data/atlas.webp');
+    background-image: var(--resource-atlas-url);
     background-position: var(--pos-x) var(--pos-y);
 }
 
