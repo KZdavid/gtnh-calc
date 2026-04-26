@@ -31,15 +31,15 @@
 
 @font-face {
     font-family: 'SDK_SC_Web';
-    src: url('./../fonts/SDK_SC_Web.ttf') format('truetype');
+    src: url('https://cdn.jsdelivr.net/gh/KZdavid/gtnh-calc@zh-CN-v0.1.1/assets/fonts/SDK_SC_Web.ttf') format('truetype');
     font-display: swap;
 }
 
 :root {
     --font-ui-primary: "SDK_SC_Web";
-    --font-ui-secondary-zh: "SDK_SC_Web";
-    --font-ui-secondary-latin: "SDK_SC_Web";
-    --font-ui-secondary: var(--font-ui-secondary-latin);
+    --font-ui-secondary-zh: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", "SimSun", "sans-serif";
+    --font-ui-secondary-latin: "Segoe UI", "Arial", "Helvetica", sans-serif;
+    --font-ui-secondary: var(--font-ui-secondary-zh), var(--font-ui-secondary-latin);
     --font-ui: var(--font-ui-primary), var(--font-ui-secondary);
     --font-ui-size: 16px;
     --font-ui-line-height: 22px;

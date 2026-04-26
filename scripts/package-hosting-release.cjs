@@ -47,6 +47,7 @@ writeDataReadme(dataDir);
 writeResourceConfigFiles(bundleDir);
 rewriteIndexResourceConfig(path.join(bundleDir, "index.html"));
 copyHostingReadme(bundleDir);
+removeFontFiles(bundleDir);
 
 if (fs.existsSync(zipPath)) {
     fs.rmSync(zipPath, { force: true });
@@ -152,6 +153,24 @@ function writeDataReadme(outputDataDir) {
     const readmePath = path.join(outputDataDir, "README.md");
     const readme = `This folder is intentionally empty in the hosting package.\n\nTo use local data mode (resourceBaseUrl = \"\"), place these files here:\n- data.bin\n- atlas.webp\n\nRecommended source:\nhttps://github.com/KZdavid/gtnh-calc-data-zh-CN/releases\n`;
     fs.writeFileSync(readmePath, readme, "utf8");
+}
+
+function removeFontFiles(bundleDir) {
+    const assetFontsDir = path.join(bundleDir, "assets", "fonts");
+    if (!fs.existsSync(assetFontsDir)) {
+        return;
+    }
+
+    const entries = fs.readdirSync(assetFontsDir);
+    for (const entry of entries) {
+        const fullPath = path.join(assetFontsDir, entry);
+        if (fs.statSync(fullPath).isFile()) {
+            const ext = path.extname(entry).toLowerCase();
+            if (ext === ".ttf" || ext === ".woff" || ext === ".woff2" || ext === ".otf") {
+                fs.rmSync(fullPath, { force: true });
+            }
+        }
+    }
 }
 
 function copyHostingReadme(outputDir) {
