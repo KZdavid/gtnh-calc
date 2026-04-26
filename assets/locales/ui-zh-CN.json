@@ -9,7 +9,7 @@
     {
       "key": "index.html|menu.header|Greg Tech: New Horizons Calculator",
       "source": "Greg Tech: New Horizons Calculator",
-      "target": "GregTech: New Horizons 计算器"
+      "target": "GregTech: New Horizons 计\u2060算\u2060器"
     },
     {
       "key": "index.html|menu.version|For GTNH version 2.8.0",
@@ -139,7 +139,7 @@
     {
       "key": "index.html|legal.font|Font used: ",
       "source": "Font used: ",
-      "target": "字体声明：中文界面回退字体 MiSans / Noto Sans CJK SC / Microsoft YaHei；使用字体："
+      "target": "使用字体："
     },
     {
       "key": "src/dialogues.ts|ast:function:showConfirmDialog#1|Yes",
