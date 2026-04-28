@@ -1,4 +1,10 @@
 import type { GameDataLocale } from "./gameDataLocale.js";
+import { getFontsConfig, resolveFontUrl } from "./resourceConfig.js";
+
+const FONT_PREF_KEY = "gtnh.selectedFont";
+
+// Injected <style> element for user-selected font face, replaced on each switch
+let userFontStyleEl: HTMLStyleElement | null = null;
 
 const zhSecondaryFontStack = `var(--font-ui-secondary-zh)`;
 const latinSecondaryFallback = `var(--font-ui-secondary-latin)`;
@@ -140,4 +146,65 @@ export function applyDatabaseLocaleFont(databaseLocale: GameDataLocale): void {
     }
 
     rootStyle.setProperty("--font-ui-secondary", latinSecondaryFallback);
+}
+
+export function getSelectedFontKey(): string | null {
+    return localStorage.getItem(FONT_PREF_KEY);
+}
+
+export function applySelectedFont(key: string): void {
+    const { options } = getFontsConfig();
+    if (!options) return;
+
+    const option = options[key];
+    if (!option) return;
+
+    localStorage.setItem(FONT_PREF_KEY, key);
+
+    if (option.systemOnly) {
+        // Use secondary font stack only, skip primary entirely
+        userFontStyleEl?.remove();
+        userFontStyleEl = null;
+        document.documentElement.style.removeProperty("--font-ui-primary");
+        document.documentElement.style.setProperty("--font-ui", "var(--font-ui-secondary)");
+        return;
+    }
+
+    if (!option.url) {
+        // No custom URL: revert to the default SDK_SC_Web primary font
+        userFontStyleEl?.remove();
+        userFontStyleEl = null;
+        document.documentElement.style.removeProperty("--font-ui-primary");
+        document.documentElement.style.removeProperty("--font-ui");
+        return;
+    }
+
+    const resolvedUrl = resolveFontUrl(option.url);
+    const familyName = `UserFont_${key}`;
+
+    if (!userFontStyleEl) {
+        userFontStyleEl = document.createElement("style");
+        document.head.appendChild(userFontStyleEl);
+    }
+    userFontStyleEl.textContent = [
+        `@font-face {`,
+        `    font-family: '${familyName}';`,
+        `    src: url('${resolvedUrl}') format('truetype');`,
+        `    font-display: swap;`,
+        `}`,
+    ].join("\n");
+
+    document.documentElement.style.removeProperty("--font-ui");
+    document.documentElement.style.setProperty("--font-ui-primary", `"${familyName}"`);
+}
+
+export function applyInitialFontPreference(): void {
+    const { options, default: defaultKey } = getFontsConfig();
+    if (!options || Object.keys(options).length === 0) return;
+
+    const saved = getSelectedFontKey();
+    const key = (saved && options[saved]) ? saved : defaultKey;
+    if (key && options[key]) {
+        applySelectedFont(key);
+    }
 }

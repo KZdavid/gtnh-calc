@@ -21,7 +21,6 @@ const findAstKeyMode = args.includes("--find-ast-key");
 const localeConfig = JSON.parse(fs.readFileSync(localeFile, "utf8"));
 const translations = localeConfig.translations ?? [];
 const links = localeConfig.links ?? [];
-const codePatches = localeConfig.codePatches ?? [];
 const missingEntries = [];
 const decodedScopeCache = new Map();
 
@@ -51,8 +50,6 @@ function prepareLocalizedSources() {
     resetDir(localizedRoot);
     fs.cpSync(srcDir, localizedSrc, { recursive: true });
     fs.copyFileSync(indexFile, localizedIndex);
-
-    applyCodePatches(codePatches);
 
     const filesToEntries = new Map();
 
@@ -91,7 +88,7 @@ function prepareLocalizedSources() {
     const missingCount = missingEntries.length;
     writeMissingReport();
     console.log(`Prepared localized source at ${toRelative(localizedRoot)}.`);
-    console.log(`Applied ${translations.length} text entries, ${links.length} link entries, and ${codePatches.length} code patch entries.`);
+    console.log(`Applied ${translations.length} text entries and ${links.length} link entries.`);
     if (missingCount > 0) {
         const message = `Missing locale matches: ${missingCount}`;
         if (strict) {
@@ -99,59 +96,6 @@ function prepareLocalizedSources() {
         }
         console.warn(message);
     }
-}
-
-function applyCodePatches(entries) {
-    const filesToEntries = new Map();
-
-    for (const entry of entries) {
-        validateCodePatchEntry(entry);
-        const sourceFile = getSourceFileFromEntry(entry);
-        const targetFile = resolveLocalizedPath(sourceFile);
-        if (!filesToEntries.has(targetFile)) {
-            filesToEntries.set(targetFile, []);
-        }
-        filesToEntries.get(targetFile).push(entry);
-    }
-
-    for (const [filePath, patches] of filesToEntries.entries()) {
-        if (!fs.existsSync(filePath)) {
-            throw new Error(`Localized target file does not exist: ${toRelative(filePath)}`);
-        }
-
-        let content = fs.readFileSync(filePath, "utf8");
-        for (const patchEntry of patches) {
-            const result = replaceConfiguredSnippet(content, patchEntry.source, patchEntry.target);
-            if (!result.replaced) {
-                reportMissing(patchEntry, filePath, "code");
-            }
-            content = result.content;
-        }
-        fs.writeFileSync(filePath, content, "utf8");
-    }
-}
-
-function replaceConfiguredSnippet(content, source, target) {
-    let result = replaceOnce(content, source, target);
-    if (result.replaced) {
-        return result;
-    }
-
-    if (content.includes("\r\n") && source.includes("\n") && !source.includes("\r\n")) {
-        result = replaceOnce(content, source.replace(/\n/g, "\r\n"), target.replace(/\n/g, "\r\n"));
-        if (result.replaced) {
-            return result;
-        }
-    }
-
-    if (!content.includes("\r\n") && source.includes("\r\n")) {
-        result = replaceOnce(content, source.replace(/\r\n/g, "\n"), target.replace(/\r\n/g, "\n"));
-        if (result.replaced) {
-            return result;
-        }
-    }
-
-    return { replaced: false, content };
 }
 
 function buildLocalizedDist() {
@@ -162,6 +106,11 @@ function buildLocalizedDist() {
     fs.copyFileSync(localizedIndex, path.join(distDir, "index.html"));
     fs.cpSync(path.join(rootDir, "assets"), path.join(distDir, "assets"), { recursive: true });
     fs.cpSync(path.join(rootDir, "data"), path.join(distDir, "data"), { recursive: true });
+
+    const resourceConfig = path.join(rootDir, "resource.config.js");
+    if (fs.existsSync(resourceConfig)) {
+        fs.copyFileSync(resourceConfig, path.join(distDir, "resource.config.js"));
+    }
 
     console.log("Localized build complete: dist now contains localized outputs.");
 }
@@ -199,16 +148,6 @@ function getSourceFileFromKey(key) {
         throw new Error(`Invalid locale key (missing file prefix): ${key}`);
     }
     return parts.sourceFile;
-}
-
-function getSourceFileFromEntry(entry) {
-    if (typeof entry.sourceFile === "string" && entry.sourceFile.length > 0) {
-        return entry.sourceFile;
-    }
-    if (typeof entry.key === "string" && entry.key.length > 0) {
-        return getSourceFileFromKey(entry.key);
-    }
-    throw new Error(`Invalid locale entry (missing sourceFile/key): ${JSON.stringify(entry)}`);
 }
 
 function parseLocaleKey(key) {
@@ -695,18 +634,6 @@ function writeMissingReport() {
 function validateEntry(entry, kind) {
     if (!entry || typeof entry.key !== "string" || typeof entry.source !== "string" || typeof entry.target !== "string") {
         throw new Error(`Invalid ${kind} entry: ${JSON.stringify(entry)}`);
-    }
-}
-
-function validateCodePatchEntry(entry) {
-    if (!entry || typeof entry.source !== "string" || typeof entry.target !== "string") {
-        throw new Error(`Invalid code patch entry: ${JSON.stringify(entry)}`);
-    }
-
-    const hasSourceFile = typeof entry.sourceFile === "string" && entry.sourceFile.length > 0;
-    const hasKey = typeof entry.key === "string" && entry.key.length > 0;
-    if (!hasSourceFile && !hasKey) {
-        throw new Error(`Invalid code patch entry (missing sourceFile/key): ${JSON.stringify(entry)}`);
     }
 }
 

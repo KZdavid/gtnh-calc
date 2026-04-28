@@ -1,4 +1,4 @@
-import { applyDatabaseLocaleFont } from "./font.js";
+import { applyDatabaseLocaleFont, applyInitialFontPreference } from "./font.js";
 import type { GameDataLocale } from "./gameDataLocale.js";
 import { applyResourceCssVariables, getAtlasUrl, getRepositoryDataUrl } from "./resourceConfig.js";
 
@@ -8,9 +8,10 @@ try {
     const atlas = new Image();
     atlas.src = getAtlasUrl();
     applyResourceCssVariables();
-    
+
     const gameDataLocale: GameDataLocale = "zh-CN";
     applyDatabaseLocaleFont(gameDataLocale);
+    applyInitialFontPreference();
 
     // Load repository and data in parallel
     const [repositoryModule, response] = await Promise.all([
@@ -28,7 +29,8 @@ try {
         import("./tooltip.js"),
         import("./nei.js"),
         import("./menu.js"),
-        import("./recipeList.js")
+        import("./recipeList.js"),
+        import("./settings.js").then(m => m.initSettings()),
     ]);
     let page = await import("./page.js");
     page.UpdateProject();

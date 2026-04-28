@@ -1,5 +1,19 @@
+type ResourceKey = 'data' | 'atlas';
+
+export type FontOption = {
+    label: string;
+    url?: string;
+    systemOnly?: boolean;
+};
+
+export type FontsConfig = {
+    default?: string;
+    options?: Record<string, FontOption>;
+};
+
 type RuntimeResourceConfig = {
-    resourceBaseUrl?: string;
+    resources?: Partial<Record<ResourceKey, string>>;
+    fonts?: FontsConfig;
 };
 
 declare global {
@@ -8,53 +22,39 @@ declare global {
     }
 }
 
-
-// For local mode, use data/data.bin and data/atlas.webp
-const LOCAL_DATA_PATH = "./data/data.bin";
-const LOCAL_ATLAS_PATH = "./data/atlas.webp";
-// For CDN mode, use data.bin and atlas.webp in root
-const CDN_DATA_PATH = "./data.bin";
-const CDN_ATLAS_PATH = "./atlas.webp";
-
-function trimLeadingDotSlash(path: string): string {
-    return path.replace(/^\.\//, "");
-}
-
-function normalizeBaseUrl(baseUrl: string): string {
-    return baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
-}
+const DEFAULT_PATHS: Record<ResourceKey, string> = {
+    data:  "./data/data.bin",
+    atlas: "./data/atlas.webp",
+};
 
 function getRuntimeConfig(): RuntimeResourceConfig {
     return window.GTNH_RESOURCE_CONFIG ?? {};
 }
 
-function resolveConfiguredUrl(path: string): string {
-    const { resourceBaseUrl } = getRuntimeConfig();
-    const normalizedPath = trimLeadingDotSlash(path);
-
-    if (!resourceBaseUrl) {
-        return new URL(normalizedPath, document.baseURI).toString();
-    }
-
-    const baseUrl = new URL(normalizeBaseUrl(resourceBaseUrl), document.baseURI).toString();
-    return new URL(normalizedPath, baseUrl).toString();
+export function getResourceUrl(key: ResourceKey): string {
+    const override = getRuntimeConfig().resources?.[key];
+    return override ?? new URL(DEFAULT_PATHS[key], document.baseURI).href;
 }
 
-
-// If resourceBaseUrl is set, use CDN paths; otherwise use local paths
 export function getRepositoryDataUrl(): string {
-    const { resourceBaseUrl } = getRuntimeConfig();
-    return resolveConfiguredUrl(resourceBaseUrl ? CDN_DATA_PATH : LOCAL_DATA_PATH);
+    return getResourceUrl('data');
 }
 
 export function getAtlasUrl(): string {
-    const { resourceBaseUrl } = getRuntimeConfig();
-    return resolveConfiguredUrl(resourceBaseUrl ? CDN_ATLAS_PATH : LOCAL_ATLAS_PATH);
+    return getResourceUrl('atlas');
 }
 
 export function applyResourceCssVariables(): void {
     document.documentElement.style.setProperty(
         "--resource-atlas-url",
-        `url("${getAtlasUrl()}")`
+        `url("${getResourceUrl('atlas')}")`
     );
+}
+
+export function getFontsConfig(): FontsConfig {
+    return getRuntimeConfig().fonts ?? {};
+}
+
+export function resolveFontUrl(url: string): string {
+    return new URL(url, document.baseURI).href;
 }

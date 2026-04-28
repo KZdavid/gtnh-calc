@@ -11,16 +11,13 @@
     <link rel="stylesheet" href="assets/styles/recipe-list.css">
     <link rel="stylesheet" href="assets/styles/menu.css">
     <link rel="stylesheet" href="assets/styles/format.css">
+    <link rel="stylesheet" href="assets/styles/settings.css">
     <link rel="icon" href="assets/images/favicon.png" type="image/png">
     <style id="item-icon-highlight-style"></style>
     <style id="item-icon-search-style"></style>
 </head>
 <body>
-    <script>
-        window.GTNH_RESOURCE_CONFIG = {
-            resourceBaseUrl: ""
-        };
-    </script>
+    <script src="resource.config.js"></script>
     <script src="https://unpkg.com/javascript-lp-solver@0.4.24/prod/solver.js"></script>
     <script type="module" src="index.js"></script>
 
@@ -36,6 +33,7 @@
                 <a href="https://wiki.gtnewhorizons.com/" target="_blank">Wiki</a>•
                 <a href="https://docs.google.com/spreadsheets/d/1EIZtJU5eBbnUlrg7fD_ZyIzsr9sn4l4no9ek6M_iSVM" target="_blank">Spreadsheet</a>
             </div>
+            <button id="settings-btn" class="settings-btn">Settings</button>
             <div class="menu-pages">
                 <div class="header"><h2 style="display: inline;">Pages</h2> (<a href="#" id="load-file">Load from file</a>)</div>
                 <div class="page-list">
@@ -94,6 +92,16 @@
                 <button id="confirm-yes">Yes</button>
                 <button id="confirm-no">No</button>
                 <button id="confirm-cancel">Cancel</button>
+            </div>
+        </div>
+
+        <div id="settings-dialog" class="hidden panel settings-dialog">
+            <div class="settings-titlebar">
+                <span id="settings-title">Settings</span>
+                <button id="settings-close" class="icon-button">✕</button>
+            </div>
+            <div class="settings-body scroll-area">
+                <!-- Font section and future sections rendered by settings.ts -->
             </div>
         </div>
 

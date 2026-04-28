@@ -143,8 +143,48 @@ function rewriteIndexResourceConfig(indexPath) {
 function writeResourceConfigFiles(outputDir) {
     const defaultConfigPath = path.join(outputDir, "resource.config.js");
     const localExamplePath = path.join(outputDir, "resource.config.local.example.js");
-    const defaultConfig = `window.GTNH_RESOURCE_CONFIG = {\n    // Set to empty string to use local files in ./data/\n    resourceBaseUrl: \"https://cdn.jsdelivr.net/gh/KZdavid/gtnh-calc-data-zh-CN@GTNH-2.8.4/\"\n};\n`;
-    const localExampleConfig = `window.GTNH_RESOURCE_CONFIG = {\n    // Local mode: load ./data/data.bin and ./data/atlas.webp\n    resourceBaseUrl: \"\"\n};\n`;
+    const defaultConfig = [
+        `window.GTNH_RESOURCE_CONFIG = {`,
+        `    // Full URLs for each resource. Omit a key to use the local default path instead.`,
+        `    resources: {`,
+        `        "data":  "https://cdn.jsdelivr.net/gh/KZdavid/gtnh-calc-data-zh-CN@GTNH-2.8.4/data.bin",`,
+        `        "atlas": "https://cdn.jsdelivr.net/gh/KZdavid/gtnh-calc-data-zh-CN@GTNH-2.8.4/atlas.webp",`,
+        `    },`,
+        ``,
+        `    // Font switching options shown in the Settings dialog.`,
+        `    // Remove this section to hide the font switcher entirely.`,
+        `    fonts: {`,
+        `        default: "sdk-sc-web",`,
+        `        options: {`,
+        `            "sdk-sc-web": {`,
+        `                label: "SDK_SC_Web（默认）",`,
+        `                url: "https://cdn.jsdelivr.net/gh/KZdavid/gtnh-calc@zh-CN/assets/fonts/SDK_SC_Web.ttf",`,
+        `            },`,
+        `            "system": { label: "系统字体", systemOnly: true },`,
+        `            //          systemOnly: skip custom font, use OS system font`,
+        `            // Add more fonts with a complete URL, for example:`,
+        `            // "misans": { label: "MiSans", url: "https://cdn.jsdelivr.net/gh/YourRepo@tag/assets/fonts/MiSans.ttf" },`,
+        `        },`,
+        `    },`,
+        `};`,
+        ``,
+    ].join("\n");
+    const localExampleConfig = [
+        `window.GTNH_RESOURCE_CONFIG = {`,
+        `    // Local mode: omit resources to use built-in local defaults`,
+        `    // (data → ./data/data.bin, atlas → ./data/atlas.webp).`,
+        ``,
+        `    // Font switching options shown in the Settings dialog.`,
+        `    // fonts: {`,
+        `    //     default: "sdk-sc-web",`,
+        `    //     options: {`,
+        `    //         "sdk-sc-web": { label: "SDK_SC_Web（默认）", url: "./assets/fonts/SDK_SC_Web.ttf" },`,
+        `    //         "system":     { label: "系统字体", systemOnly: true },`,
+        `    //     },`,
+        `    // },`,
+        `};`,
+        ``,
+    ].join("\n");
     fs.writeFileSync(defaultConfigPath, defaultConfig, "utf8");
     fs.writeFileSync(localExamplePath, localExampleConfig, "utf8");
 }

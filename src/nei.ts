@@ -653,17 +653,44 @@ interface NeiTab {
     isVisible(): boolean;
 }
 
+function findItemIconById(targetId: string): number | null {
+    for (const pointer of repository.items) {
+        const item = repository.GetObject(pointer, Item);
+        if (item.id === targetId) {
+            return item.iconId;
+        }
+    }
+    return null;
+}
+
+function findServiceItemIcon(serviceIndex: number): number | null {
+    if (serviceIndex < 0 || serviceIndex >= repository.service.length) {
+        return null;
+    }
+    const pointer = repository.service[serviceIndex];
+    if (pointer == null || pointer < 0) {
+        return null;
+    }
+    return repository.GetObject(pointer, Item).iconId;
+}
+
+function resolveTabIcon(stableId: string, serviceIndex: number, fallbackPointerIndex: number = 0): number {
+    return findItemIconById(stableId)
+        ?? findServiceItemIcon(serviceIndex)
+        ?? repository.GetObject(repository.items[fallbackPointerIndex], Item).iconId;
+}
+
 const tabs: NeiTab[] = [
-    { 
-        name: "All Items", 
-        filler: FillNeiAllItems, 
-        iconId: repository.GetObject(repository.service[0], Item).iconId,
+    {
+        name: "All Items",
+        filler: FillNeiAllItems,
+        iconId: resolveTabIcon("i:questbook:ItemQuestBook:0", 0),
         isVisible: () => true // Always visible
     },
-    { 
-        name: "All Recipes", 
-        filler: FillNeiAllRecipes, 
-        iconId: repository.GetObject(repository.service[1], Item).iconId,
+    {
+        name: "All Recipes",
+        filler: FillNeiAllRecipes,
+        iconId: resolveTabIcon("i:minecraft:anvil:0", 1),
         isVisible: () => currentGoods !== null // Visible only when viewing recipes
     }
 ];

@@ -31,9 +31,8 @@
 
 @font-face {
     font-family: 'SDK_SC_Web';
-    src: local('SDK_SC_Web'),
-         url('./../fonts/SDK_SC_Web.ttf') format('truetype'),
-         url('https://cdn.jsdelivr.net/gh/KZdavid/gtnh-calc@zh-CN-v0.1.1/assets/fonts/SDK_SC_Web.ttf') format('truetype');
+    src: local('SDK_SC_Web');
+    /* CDN/local URL is injected at runtime via font.ts using window.GTNH_RESOURCE_CONFIG */
     font-display: swap;
 }
 
