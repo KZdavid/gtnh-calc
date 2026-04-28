@@ -158,7 +158,7 @@ function writeResourceConfigFiles(outputDir) {
         `        options: {`,
         `            "sdk-sc-web": {`,
         `                label: "SDK_SC_Web（默认）",`,
-        `                url: "https://cdn.jsdelivr.net/gh/KZdavid/gtnh-calc@zh-CN/assets/fonts/SDK_SC_Web.ttf",`,
+        `                url: "https://cdn.jsdelivr.net/gh/KZdavid/gtnh-calc@assets-v1/assets/fonts/SDK_SC_Web.ttf",`,
         `            },`,
         `            "system": { label: "系统字体", systemOnly: true },`,
         `            //          systemOnly: skip custom font, use OS system font`,
