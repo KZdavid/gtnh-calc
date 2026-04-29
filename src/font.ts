@@ -1,4 +1,4 @@
-import type { GameDataLocale } from "./gameDataLocale.js";
+import type { GameDataLocale } from "./resourceConfig.js";
 import { getFontsConfig, resolveFontUrl } from "./resourceConfig.js";
 
 const FONT_PREF_KEY = "gtnh.selectedFont";

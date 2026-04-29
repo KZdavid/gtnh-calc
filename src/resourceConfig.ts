@@ -1,3 +1,10 @@
+/**
+ * Game-data locale is intentionally independent from UI locale.
+ * UI text and in-game data (items/recipes/machine names) can be chosen separately.
+ * This type is only for game content language selection.
+ */
+export type GameDataLocale = "en" | "zh-CN";
+
 type ResourceKey = 'data' | 'atlas';
 
 export type FontOption = {
