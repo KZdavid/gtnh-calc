@@ -1,25 +1,34 @@
 import { applyDatabaseLocaleFont, applyInitialFontPreference } from "./font.js";
-import type { GameDataLocale } from "./gameDataLocale.js";
+import type { GameDataLocale } from "./resourceConfig.js";
 import { applyResourceCssVariables, getAtlasUrl, getRepositoryDataUrl } from "./resourceConfig.js";
+import { getLocalFile } from "./localData.js";
 
 const loading = document.getElementById("loading")!;
 try {
     // Load the atlas image
+    const localAtlas = await getLocalFile("atlas.webp");
     const atlas = new Image();
-    atlas.src = getAtlasUrl();
-    applyResourceCssVariables();
+    if (localAtlas) {
+        const blobUrl = URL.createObjectURL(new Blob([localAtlas], { type: "image/webp" }));
+        atlas.src = blobUrl;
+        document.documentElement.style.setProperty("--resource-atlas-url", `url("${blobUrl}")`);
+    } else {
+        atlas.src = getAtlasUrl();
+        applyResourceCssVariables();
+    }
 
     const gameDataLocale: GameDataLocale = "zh-CN";
     applyDatabaseLocaleFont(gameDataLocale);
     applyInitialFontPreference();
 
     // Load repository and data in parallel
-    const [repositoryModule, response] = await Promise.all([
+    const localData = await getLocalFile("data.bin");
+    const [repositoryModule, buffer] = await Promise.all([
         import("./repository.js"),
-        fetch(getRepositoryDataUrl())
+        localData
+            ? new Response(new Blob([localData]).stream().pipeThrough(new DecompressionStream("gzip"))).arrayBuffer()
+            : fetch(getRepositoryDataUrl()).then(r => new Response(r.body!.pipeThrough(new DecompressionStream("gzip"))).arrayBuffer())
     ]);
-    const stream = response.body!.pipeThrough(new DecompressionStream("gzip"));
-    const buffer = await new Response(stream).arrayBuffer();
     repositoryModule.Repository.load(buffer);
     console.log("Repository loaded", repositoryModule.Repository.current);
 
