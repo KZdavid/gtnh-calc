@@ -1,6 +1,6 @@
 import { GetScrollbarWidth, voltageTier, formatAmount, CoilTierNames, TIER_MV, getFusionTierByStartupCost } from "./utils.js";
-import { Goods, Fluid, Item, Repository, IMemMappedObjectPrototype, Recipe, RecipeType, RecipeIoType, RecipeInOut, RecipeObject, OreDict, GtRecipeMetadata } from "./repository.js";
-import { SearchQuery } from "./searchQuery.js";
+import { Goods, Fluid, Item, Repository, IMemMappedObjectPrototype, Recipe, RecipeType, RecipeIoType, RecipeInOut, RecipeObject, OreDict, GtRecipeMetadata, createSearchQuery } from "./repository.js";
+import type { SearchQuery } from "./searchQuery.js";
 import { ShowTooltip, HideTooltip } from "./tooltip.js";
 
 const repository = Repository.current;
@@ -332,7 +332,7 @@ function FillNeiSpecificRecipes(recipeType:RecipeType) : NeiFiller
 
 function SearchChanged()
 {
-    search = searchBox.value === "" ? null : new SearchQuery(searchBox.value);
+    search = searchBox.value === "" ? null : createSearchQuery(searchBox.value);
     if (search !== null && (search.words.length === 0 && search.mod === null))
         search = null;
     RefreshNeiContents();

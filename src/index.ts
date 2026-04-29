@@ -1,5 +1,4 @@
 import { applyDatabaseLocaleFont, applyInitialFontPreference } from "./font.js";
-import type { GameDataLocale } from "./resourceConfig.js";
 import { applyResourceCssVariables, getAtlasUrl, getRepositoryDataUrl } from "./resourceConfig.js";
 import { getLocalFile } from "./localData.js";
 
@@ -17,8 +16,7 @@ try {
         applyResourceCssVariables();
     }
 
-    const gameDataLocale: GameDataLocale = "zh-CN";
-    applyDatabaseLocaleFont(gameDataLocale);
+    applyDatabaseLocaleFont("zh-CN");
     applyInitialFontPreference();
 
     // Load repository and data in parallel
@@ -30,6 +28,7 @@ try {
             : fetch(getRepositoryDataUrl()).then(r => new Response(r.body!.pipeThrough(new DecompressionStream("gzip"))).arrayBuffer())
     ]);
     repositoryModule.Repository.load(buffer);
+    applyDatabaseLocaleFont(repositoryModule.Repository.current.locale);
     console.log("Repository loaded", repositoryModule.Repository.current);
 
     // Then load other modules
