@@ -50,6 +50,18 @@ async function buildLocalDataSection(container: HTMLElement): Promise<void> {
     heading.textContent = "本地数据文件 (beta)";
     section.appendChild(heading);
 
+    const hint = document.createElement("p");
+    hint.className = "settings-file-hint";
+    hint.textContent = 'data.bin 与 atlas.webp 必须同时来自同一版本，否则图标会错位。选择文件后点击"重新加载"生效。';
+    section.appendChild(hint);
+
+    let dirty = false;
+    const reloadBtn = document.createElement("button");
+    reloadBtn.textContent = "重新加载";
+    reloadBtn.className = "settings-file-btn";
+    reloadBtn.disabled = true;
+    reloadBtn.addEventListener("click", () => location.reload());
+
     for (const key of ["data.bin", "atlas.webp"] as LocalFileKey[]) {
         const row = document.createElement("div");
         row.className = "settings-row";
@@ -58,7 +70,7 @@ async function buildLocalDataSection(container: HTMLElement): Promise<void> {
         label.textContent = key;
         row.appendChild(label);
 
-        const has = await hasLocalFile(key);
+        let has = await hasLocalFile(key);
 
         const btn = document.createElement("button");
         btn.textContent = has ? "清除" : "选择文件…";
@@ -74,9 +86,17 @@ async function buildLocalDataSection(container: HTMLElement): Promise<void> {
             try {
                 if (has) {
                     await clearLocalFile(key);
+                    has = false;
+                    btn.textContent = "选择文件…";
+                    status.textContent = "已清除";
                 } else {
                     await pickAndStoreFile(key);
+                    has = true;
+                    btn.textContent = "清除";
+                    status.textContent = "已加载本地文件";
                 }
+                dirty = true;
+                reloadBtn.disabled = false;
             } catch (e: any) {
                 if (e?.name !== "AbortError") {
                     status.textContent = e?.message ?? "未知错误";
@@ -89,6 +109,11 @@ async function buildLocalDataSection(container: HTMLElement): Promise<void> {
         row.appendChild(status);
         section.appendChild(row);
     }
+
+    const reloadRow = document.createElement("div");
+    reloadRow.className = "settings-row";
+    reloadRow.appendChild(reloadBtn);
+    section.appendChild(reloadRow);
 
     container.appendChild(section);
 }

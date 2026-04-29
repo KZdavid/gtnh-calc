@@ -51,13 +51,11 @@ export async function pickAndStoreFile(key: LocalFileKey): Promise<void> {
     if (!validate(key, buf)) throw new Error(`文件格式不符合预期 (${key})`);
     const db = await getDB();
     await idbOp(db, "readwrite", s => s.put(buf, key));
-    location.reload();
 }
 
 export async function clearLocalFile(key: LocalFileKey): Promise<void> {
     const db = await getDB();
     await idbOp(db, "readwrite", s => s.delete(key));
-    location.reload();
 }
 
 export async function hasLocalFile(key: LocalFileKey): Promise<boolean> {
