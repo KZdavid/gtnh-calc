@@ -1,6 +1,7 @@
 import { getFontsConfig } from "./resourceConfig.js";
 import { applySelectedFont, getSelectedFontKey } from "./font.js";
 import { pickAndStoreFile, clearLocalFile, hasLocalFile, type LocalFileKey } from "./localData.js";
+import { Repository } from "./repository.js";
 
 function buildFontSection(container: HTMLElement): void {
     const { options, default: defaultKey } = getFontsConfig();
@@ -54,6 +55,14 @@ async function buildLocalDataSection(container: HTMLElement): Promise<void> {
     hint.className = "settings-file-hint";
     hint.textContent = 'data.bin 与 atlas.webp 必须同时来自同一版本，否则图标会错位。选择文件后点击"重新加载"生效。';
     section.appendChild(hint);
+
+    const localeRow = document.createElement("div");
+    localeRow.className = "settings-row";
+    const localeLabel = document.createElement("span");
+    localeLabel.className = "settings-file-hint";
+    localeLabel.textContent = `当前数据库语言：${Repository.current?.locale ?? "未加载"}`;
+    localeRow.appendChild(localeLabel);
+    section.appendChild(localeRow);
 
     let dirty = false;
     const reloadBtn = document.createElement("button");

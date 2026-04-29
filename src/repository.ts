@@ -148,11 +148,11 @@ export class Repository
     {
         if (query === null)
             return this.GetObject(pointer, prototype);
+        if (!this.isChineseDatabase && query.original.length === 1)
+            return this.GetObject(pointer, prototype);
         if (!this.ObjectMatchQueryBits(query, pointer))
             return null;
         var inst = this.GetObject(pointer, prototype);
-        if (!this.isChineseDatabase && query.original.length === 1)
-            return inst;
         return inst.MatchSearchText(query) ? inst : null;
     }
 
@@ -160,10 +160,10 @@ export class Repository
     {
         if (query === null)
             return true;
-        if (!this.ObjectMatchQueryBits(query, obj.objectOffset))
-            return false;
         if (!this.isChineseDatabase && query.original.length === 1)
             return true;
+        if (!this.ObjectMatchQueryBits(query, obj.objectOffset))
+            return false;
         return obj.MatchSearchText(query);
     }
 }
