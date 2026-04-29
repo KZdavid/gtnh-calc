@@ -1,4 +1,4 @@
-import { SearchQuery } from "./searchQuery.js";
+import { SearchQuery, SearchDatabaseLocale } from "./searchQuery.js";
 
 const charCodeItem = "i".charCodeAt(0);
 const charCodeFluid = "f".charCodeAt(0);
@@ -20,6 +20,8 @@ export class Repository
     recipes:Int32Array;
     oreDicts:Int32Array;
     service:Int32Array;
+    isChineseDatabase:boolean;
+    locale:SearchDatabaseLocale;
 
     objectPositionMap: {[id:string]:number} = {};
 
@@ -29,6 +31,8 @@ export class Repository
         this.elements = new Int32Array(data);
         this.view = new DataView(data);
         this.textReader = new TextDecoder();
+        this.isChineseDatabase = this.DetectChineseDatabase();
+        this.locale = this.isChineseDatabase ? "zh-CN" : "en";
         let dataVersion = this.elements[0];
         if (dataVersion != DATA_VERSION)
             throw new Error(`Unsupported data version: ${dataVersion} (Required: ${DATA_VERSION}). This may be caused by the browser cache. Please try reloading using F5 or Ctrl+F5.`);
@@ -52,6 +56,18 @@ export class Repository
         const repository = new Repository(data);
         Repository.current = repository;
         return repository;
+    }
+
+    private DetectChineseDatabase(): boolean {
+        const CJK = /[一-鿿㐀-䶿]/;
+        const itemsPtr = this.elements[1];
+        const count = Math.min(this.elements[itemsPtr], 20);
+        for (let i = 0; i < count; i++) {
+            const itemPtr = this.elements[itemsPtr + 1 + i];
+            const name = this.GetString(this.elements[itemPtr + 5]);
+            if (name && CJK.test(name)) return true;
+        }
+        return false;
     }
 
     private FillRecipesRemap(remap:Int32Array) {
@@ -82,6 +98,7 @@ export class Repository
 
     public ObjectMatchQueryBits(query:SearchQuery, pointer:number):boolean
     {
+        if (this.isChineseDatabase) return true;
         var arr = query.indexBits;
         for (var i=0; i<4; i++) {
             if ((this.elements[pointer+i] & arr[i]) !== arr[i])
@@ -131,11 +148,11 @@ export class Repository
     {
         if (query === null)
             return this.GetObject(pointer, prototype);
+        if (!this.isChineseDatabase && query.original.length === 1)
+            return this.GetObject(pointer, prototype);
         if (!this.ObjectMatchQueryBits(query, pointer))
             return null;
         var inst = this.GetObject(pointer, prototype);
-        if (query.original.length === 1)
-            return inst;
         return inst.MatchSearchText(query) ? inst : null;
     }
 
@@ -143,10 +160,10 @@ export class Repository
     {
         if (query === null)
             return true;
+        if (!this.isChineseDatabase && query.original.length === 1)
+            return true;
         if (!this.ObjectMatchQueryBits(query, obj.objectOffset))
             return false;
-        if (query.original.length === 1)
-            return true;
         return obj.MatchSearchText(query);
     }
 }
@@ -399,4 +416,8 @@ export class Recipe extends SearchableObject
         }
         return false;
     }
+}
+
+export function createSearchQuery(text: string): SearchQuery {
+    return new SearchQuery(text, Repository.current.isChineseDatabase ? "zh-CN" : "en");
 }

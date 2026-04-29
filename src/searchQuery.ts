@@ -1,4 +1,4 @@
-type SearchDatabaseLocale = "en" | "zh-CN";
+export type SearchDatabaseLocale = "en" | "zh-CN";
 
 const special:string = "09azAZ";
 const code0 = special.charCodeAt(0);
@@ -9,29 +9,6 @@ const codeA = special.charCodeAt(4);
 const codeZ = special.charCodeAt(5);
 const charCount = 26+10;
 const charOffset = 128-charCount;
-
-function getSearchDatabaseLocaleParam(): string {
-    if (typeof localStorage !== "undefined") {
-        const fromStorage = localStorage.getItem("gtnh.gameLocale");
-        if (fromStorage && fromStorage.trim().length > 0) {
-            return fromStorage;
-        }
-    }
-
-    if (typeof window !== "undefined") {
-        const params = new URLSearchParams(window.location.search);
-        const fromQuery = params.get("gameLocale") ?? params.get("dbLocale");
-        if (fromQuery && fromQuery.trim().length > 0) {
-            return fromQuery;
-        }
-    }
-
-    return "zh-CN";
-}
-
-function normalizeSearchDatabaseLocale(locale: string): SearchDatabaseLocale {
-    return locale.toLowerCase().startsWith("zh") ? "zh-CN" : "en";
-}
 
 abstract class SearchQueryVariant {
     original:string;
@@ -157,7 +134,7 @@ export class SearchQuery
     mod:string | null;
     private variant:SearchQueryVariant;
 
-    constructor(text:string, databaseLocale:SearchDatabaseLocale = normalizeSearchDatabaseLocale(getSearchDatabaseLocaleParam()))
+    constructor(text:string, databaseLocale:SearchDatabaseLocale)
     {
         this.variant = databaseLocale === "zh-CN"
             ? new ChineseSearchQueryVariant(text)
