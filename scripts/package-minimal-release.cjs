@@ -64,6 +64,11 @@ writeResourceConfigFiles(bundleDir);
 rewriteIndexResourceConfig(path.join(bundleDir, "index.html"));
 ensureDataPlaceholders(bundleDir);
 
+const srcExportZh = path.join(rootDir, "export", "README-zh-CN.md");
+if (fs.existsSync(srcExportZh)) {
+    fs.copyFileSync(srcExportZh, path.join(bundleDir, "export-README-zh-CN.md"));
+}
+
 if (fs.existsSync(zipPath)) {
     fs.rmSync(zipPath, { force: true });
 }

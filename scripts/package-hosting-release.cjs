@@ -225,6 +225,12 @@ function copyHostingReadme(outputDir) {
     if (fs.existsSync(srcReadmeEn)) {
         fs.copyFileSync(srcReadmeEn, dstReadmeEn);
     }
+
+    const srcExportZh = path.join(rootDir, "export", "README-zh-CN.md");
+    const dstExportZh = path.join(outputDir, "export-README-zh-CN.md");
+    if (fs.existsSync(srcExportZh)) {
+        fs.copyFileSync(srcExportZh, dstExportZh);
+    }
 }
 
 function runCommand(command, args) {
