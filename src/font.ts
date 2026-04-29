@@ -3,11 +3,7 @@ import { getFontsConfig, resolveFontUrl } from "./resourceConfig.js";
 
 const FONT_PREF_KEY = "gtnh.selectedFont";
 
-// Injected <style> element for user-selected font face, replaced on each switch
 let userFontStyleEl: HTMLStyleElement | null = null;
-
-const zhSecondaryFontStack = `var(--font-ui-secondary-zh)`;
-const latinSecondaryFallback = `var(--font-ui-secondary-latin)`;
 
 type FontFormatConfig = {
     uiSizePx?: number;
@@ -21,8 +17,6 @@ type FontFormatConfig = {
 };
 
 type FontLocaleProfile = {
-    secondaryFontStack?: string;
-    systemFontCandidates?: string[];
     format?: FontFormatConfig;
 };
 
@@ -41,7 +35,6 @@ const fontProfiles: Record<string, FontLocaleProfile> = {
     default: {},
     en: {},
     "zh-cn": {
-        secondaryFontStack: `"MiSans", ${zhSecondaryFontStack}`,
         format: {
             uiSizePx: 18,
             uiLineHeightPx: 24,
@@ -53,21 +46,6 @@ const fontProfiles: Record<string, FontLocaleProfile> = {
             smallWordSpacingPx: 1,
         },
     },
-    ja: {
-        systemFontCandidates: ["Yu Gothic UI", "Meiryo", "Noto Sans JP"],
-    },
-    ko: {
-        systemFontCandidates: ["Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR"],
-    },
-    ar: {
-        systemFontCandidates: ["Segoe UI", "Tahoma", "Noto Naskh Arabic"],
-    },
-    ru: {
-        systemFontCandidates: ["Segoe UI", "Arial", "Noto Sans"],
-    },
-    uk: {
-        systemFontCandidates: ["Segoe UI", "Arial", "Noto Sans"],
-    },
 };
 
 function normalizeLocaleKey(locale: string): string {
@@ -76,44 +54,14 @@ function normalizeLocaleKey(locale: string): string {
 
 function resolveLocaleProfile(locale: string): FontLocaleProfile {
     const normalized = normalizeLocaleKey(locale);
-    if (fontProfiles[normalized]) {
-        return fontProfiles[normalized];
-    }
-
+    if (fontProfiles[normalized]) return fontProfiles[normalized];
     const prefix = normalized.split("-")[0];
-    if (fontProfiles[prefix]) {
-        return fontProfiles[prefix];
-    }
-
+    if (fontProfiles[prefix]) return fontProfiles[prefix];
     return fontProfiles.default;
 }
 
 function resolveFontFormat(locale: string): Required<FontFormatConfig> {
-    const profileFormat = resolveLocaleProfile(locale).format ?? {};
-    return {
-        ...defaultFontFormat,
-        ...profileFormat,
-    };
-}
-
-function browserDefaultLanguageFontCandidates(): string[] {
-    const language = normalizeLocaleKey(navigator.language ?? "en");
-    const profile = resolveLocaleProfile(language);
-    return profile.systemFontCandidates ?? ["Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "Roboto", "Ubuntu"];
-}
-
-function pickAvailableSystemFont(fontCandidates: string[]): string | null {
-    if (!document.fonts?.check) {
-        return null;
-    }
-
-    for (const candidate of fontCandidates) {
-        if (document.fonts.check(`16px \"${candidate}\"`)) {
-            return candidate;
-        }
-    }
-
-    return null;
+    return { ...defaultFontFormat, ...(resolveLocaleProfile(locale).format ?? {}) };
 }
 
 function applyFontFormat(locale: string): void {
@@ -130,22 +78,8 @@ function applyFontFormat(locale: string): void {
 }
 
 export function applyDatabaseLocaleFont(databaseLocale: GameDataLocale): void {
-    const rootStyle = document.documentElement.style;
     document.documentElement.dataset.dbLocale = databaseLocale;
     applyFontFormat(databaseLocale);
-
-    if (databaseLocale === "zh-CN") {
-        rootStyle.setProperty("--font-ui-secondary", resolveLocaleProfile(databaseLocale).secondaryFontStack ?? zhSecondaryFontStack);
-        return;
-    }
-
-    const selected = pickAvailableSystemFont(browserDefaultLanguageFontCandidates());
-    if (selected) {
-        rootStyle.setProperty("--font-ui-secondary", `\"${selected}\", ${latinSecondaryFallback}`);
-        return;
-    }
-
-    rootStyle.setProperty("--font-ui-secondary", latinSecondaryFallback);
 }
 
 export function getSelectedFontKey(): string | null {

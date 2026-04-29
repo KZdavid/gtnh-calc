@@ -1,9 +1,9 @@
-import { Goods, Item, Recipe, RecipeInOut, RecipeIoType, RecipeObject, Repository } from "./repository.js";
+import { Goods, Item, Recipe, RecipeInOut, RecipeIoType, RecipeObject, Repository, createSearchQuery } from "./repository.js";
 import { SolvePage } from "./solver.js";
 import { showConfirmDialog } from './dialogues.js';
 import { Machine, singleBlockMachine } from "./machines.js";
 import { Choice } from "./machines.js";
-import { SearchQuery } from "./searchQuery.js";
+import type { SearchQuery } from "./searchQuery.js";
 
 let nextIid = 0;
 
@@ -426,7 +426,7 @@ function SearchGroup(query:SearchQuery, group:RecipeGroupModel, idMap:{[key:stri
 export function Search(text:string):{[key:string]:boolean}
 {
     let result:{[key:string]:boolean} = {}
-    let query = new SearchQuery(text);
+    let query = createSearchQuery(text);
     SearchGroup(query, page.rootGroup, result);
     return result;
 }
