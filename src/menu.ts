@@ -2,6 +2,8 @@ import { PageModel, serializer, SetCurrentPage, addProjectChangeListener, page, 
 import { showConfirmDialog } from './dialogues.js';
 import { ShowNei, ShowNeiMode } from "./nei.js";
 
+const pageNameCollator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
+
 async function ValidateAndNotify(page: PageModel): Promise<void> {
     const validator = new ModelObjectValidator();
     const errors = validator.Validate(page);
@@ -130,7 +132,7 @@ export class PageManager {
                 this.pages.push(key.substring(2));
             }
         }
-        this.pages.sort();
+        this.pages.sort(pageNameCollator.compare);
     }
 
     private render() {
@@ -220,7 +222,7 @@ export class PageManager {
         localStorage.setItem(`p:${finalName}`, serialized);
         
         this.pages.push(finalName);
-        this.pages.sort();
+        this.pages.sort(pageNameCollator.compare);
         this.pageCache.set(finalName, page);
         // Initialize history with the initial state
         page.addToHistory(serialized);
@@ -318,7 +320,7 @@ export class PageManager {
         
         if (!this.pages.includes(pageName)) {
             this.pages.push(pageName);
-            this.pages.sort();
+            this.pages.sort(pageNameCollator.compare);
         }
         
         this.pageCache.set(pageName, model);
@@ -350,7 +352,7 @@ export class PageManager {
         localStorage.setItem(`p:${finalName}`, serialized);
         this.pageCache.set(finalName, page);
         this.pages.push(finalName);
-        this.pages.sort();
+        this.pages.sort(pageNameCollator.compare);
         
         // Update current page if needed
         if (this.currentPage === oldName) {

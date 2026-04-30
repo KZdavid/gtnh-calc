@@ -387,6 +387,11 @@
             "target": "点击以选择其他配方"
         },
         {
+            "key": "src/page.ts|ast:class:PageModel/property:name#1|New Page",
+            "source": "New Page",
+            "target": "新页面"
+        },
+        {
             "key": "src/menu.ts|ast:function:ValidateAndNotify/var:message#1|The page you are about to load contains:",
             "source": "The page you are about to load contains:",
             "target": "你即将加载的页面包含："
